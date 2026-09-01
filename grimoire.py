@@ -90,6 +90,14 @@ def load_all_fragments():
     return fragments
 
 
+def _clean_text(t):
+    """Dehyphenate OCR line breaks and collapse whitespace."""
+    import re
+    t = re.sub(r'-\s*\n\s*', '', t)  # join hyphenated line breaks
+    t = re.sub(r'\n{2,}', '\n', t)
+    return t.strip()
+
+
 def query_random_rag_chunks(count=13):
     """Fallback: random RAG chunks from the book corpus.
 
@@ -113,7 +121,11 @@ def query_random_rag_chunks(count=13):
                     src += f" ({author})"
                 if page is not None:
                     src += f" p.{page}"
-                rows.append({"source": src, "text": text[:600].strip()})
+                text = _clean_text(text)
+                if len(text) > 600:
+                    cut = text[:600].rsplit(" ", 1)[0]
+                    text = cut + " …"
+                rows.append({"source": src, "text": text})
         conn.close()
         return rows
     except Exception:

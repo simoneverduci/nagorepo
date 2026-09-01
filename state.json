@@ -1,86 +1,68 @@
 {
-  "cycles": 3,
-  "seed": "f33c1d86dd75b302",
-  "generated_at": "2026-09-01T18:02:47Z",
-  "obsession": "Sigil as compressed ritual — geometry of intent in the digital substrate",
-  "book": "Becoming Abolitionists (Derecka Purnell) p.234",
+  "cycles": 4,
+  "seed": "87b6cd1b232af05a",
+  "generated_at": "2026-09-01T18:10:57Z",
+  "obsession": "Burroughs' cut-up as divination: random access to the cosmic library",
+  "book": "If They Come in the Morning (Angela Davis) p.159",
   "collision": "seed cycle",
   "mutation_note": "",
   "sigil_params": {
-    "rings": 6,
-    "twist": 1.58,
-    "weave_density": 3,
-    "pulse_speed": 6.6,
+    "rings": 5,
+    "twist": 0.76,
+    "weave_density": 2,
+    "pulse_speed": 6.7,
     "palette": [
-      "#00ff88",
-      "#00cc66",
-      "#008844",
-      "#44ffaa"
+      "#8844ff",
+      "#6633cc",
+      "#442288",
+      "#aa66ff"
     ],
-    "bg_alpha": 0.095,
-    "rune_count": 16,
-    "center_emblem": 1
+    "bg_alpha": 0.092,
+    "rune_count": 8,
+    "center_emblem": 0
   },
   "source_type": "rag_bootstrap",
-  "run_n": 3,
+  "run_n": 4,
   "fragments": [
     {
-      "source": "Becoming Abolitionists (Derecka Purnell) p.234",
-      "text": "r closer to a God who I know loves me. I’ve begun therapy with the\nwonderful Naomi—a mental health professional—who listens, converses\nwith and advises me and has me convinced that I am still a person of\nworth.” This is what I believe is the best tradition of the church, friendships,\nand mutual aid networks. I had known the church to be a messy place with\nregard to disability. Sometimes, pastors will use the Bible to talk about\ndisabilities as a curse or punishment. And I’ve seen the same pastors say,\nFor those who are able, please stand to read the word of God, and ensure\nthat church members",
+      "source": "If They Come in the Morning (Angela Davis) p.159",
+      "text": ". She saw the symbols of\nlaw and order represented by the likes of George Wallace and Bull Connor, the\nburning cross of the old South, the electric cattle prods of the new. Yet she also\nsaw, among her generation, the first glimmerings of a renewed resistance, and\nshe joined that resistance, picketing segregated facilities, canvassing in voter\nregistration, participating in integrated study groups. These early years were\nyears of young hopes, old, abiding fears. She lived on “Dynamite Hill,” where\nBlack families lived in constant fear of racist reprisals. “Every night now,” she\nwrote, “I’ll …",
       "collision": "",
       "type": "passage"
     },
     {
-      "source": "andrew-boys-the-activist-cookbook-creative-actions-for-a-fair-economy p.95",
-      "text": "off. You can get \na lot of laughs out of these moments, \nby shooting them a look or making an \noff-hand comment. Come up with \nyour own one-liners. You might \nencourage the Middle Class to get \nlouder with their \"Get a job!\" chant, \nby saying, \"Come on Middle Class, \nthis is your mantra!\" Or you might \nencourage the Working class to use \ntheir feather dusters, by saying, \n\"Wave those feather dusters! \nWhaddya think they are? The ham­\nmer and sickle of the service econo­\nmy?!\" Think about your entrance. Be \ndramatic but clear with your conduct­\ning signals. Use the video as a guide. \nRehearsing",
+      "source": "Algorithmic Anxiety in Contemporary Art: A Kierkegaardian Inquiry into the Imaginary of Possibility (Patricia de Vries) p.75",
+      "text": "n the floors and in the \noffices that Fragments on Machines depicts, we don’t find white-collar workers sat in cubicles. \nThe camera pans along the lines and grids of server rooms, cables and wires in all colors, air \nventilation systems, computer buttons, rubber tubes, and along endless, brightly lit corridors \nand aisles full of whirring machines where the activities of algorithmic trading are supposed \nto ‘happen’. The film shows an abundance of images with no human in sight. Here, Charles \nseems to allude to the Grundrisse, in which Marx contends that machines become an abstract, …",
       "collision": "",
       "type": "passage"
     },
     {
-      "source": "Encyclopedia of Occultism & Parapsychology (5th ed.) (J. Gordon Melton (ed.)) p.1472",
-      "text": "rapsychology • 5th Ed.\nSpiritualism\n1463\n\nOrigins of Spiritualism\nSpiritualism in its modern form dates back no further than\n1848 and the Fox sisters. Its practices can be traced to attempts\nat spirit communication reaching back to ancient times. Such\nattempts at communication with both the surviving conscious-\nness of the dead and various orders of spiritual beings, both an-\ngelic and demonic, appear in the oldest extant records of cul-\ntures worldwide. It has only been in the last few centuries that\nstrong doubts about the possibility of life after death and com-\nmunication with a spiritual",
+      "source": "Breasts and Eggs (Mieko Kawakami;) p.65",
+      "text": "way, we were like is China really as strict as everyone says? Or, you\nknow, as poor? Do people really ride around on bikes dressed up in Mao suits? I\nasked her about this thing I saw once on TV, where they said everyone in China\nwas drinking oolong tea out of empty Nescafé bottles. And Jing Li was like\nyeah, that’s what it’s like. People act like the Beijing Olympics is going to save\nChina, but it’s all lies. It’ll help a small handful of people, but almost everybody\nis broke, so they have to scrape by. Most of the country is totally behind. When\nthere was that earthquake in Sichuan, that …",
       "collision": "",
       "type": "passage"
     },
     {
-      "source": "The Dawn of Everything (David Graeber & David Wengrow) p.17",
-      "text": "obbes and Rousseau alike – has\nalmost nothing to do with the facts. But to begin making sense of the new\ninformation that’s now before our eyes, it is not enough to compile and sift\nvast quantities of data. A conceptual shift is also required.\nTo make that shift means retracing some of the initial steps that led to our\nmodern notion of social evolution: the idea that human societies could be\narranged according to stages of development, each with their own\ncharacteristic technologies and forms of organization (hunter-gatherers,\nfarmers, urban-industrial society, and so on). As we will see, such",
+      "source": "Sobre la bilis negra o mal de Saturno (Rafael Núñez Florencio) p.14",
+      "text": ". Las enfermedades del alma en la España del Siglo de Oro. Barcelona: Anagrama, 2001.\n• Burton R. Anatomía de la melancolía. Madrid: Alianza, 2006.\nSobre la bilis negra o mal de Saturno\n• Diego R y Vázquez L. eds. Humores negros. Del tedio, la melancolía, el esplín y otros aburrimientos. Madrid: Biblioteca Nueva, 1998.\n• Ehrenreich B. Una historia de la alegría. Barcelona: Paidós, 2008.\n• Földényi LF. Melancolía. Barcelona: Galaxia Gutenberg/Círculo de Lectores, 1998.\n• García Gibert J. Cervantes y la melancolía: ensayos sobre el tono y la actitud cervantinos. Valencia:\nAlfons El Magnànim, …",
       "collision": "",
       "type": "passage"
     },
     {
-      "source": "30  Years after Les Immatériaux: Art, Science, and Theory (Hui) p.49",
-      "text": "ers and directors of the exhibition, whether consciously or not, \ntake as their aim the education of the visitor; and that in this sense, the gallery \nis a teaching establishment that one goes through faster than a teaching \nestablishment; it is something like a training film, except that the objects are \ngenerally immobile and it is the viewer who moves. But if this is the case, if \nit is indeed a model street, a street that leads not toward the countryside \nbut toward the heart of culture, a street that goes towards “downtown”, \ntoward the centre, then this is also characteristic of  moderni",
+      "source": "Listening and Voice : Phenomenologies of Sound (Sheila) p.145",
+      "text": "myself “wandering off”\ninto my own thought, perhaps stimulated by what I have read, and before\nlong the reading has receded and become “mechanical” as I move from the\nmeaning in the words to focus on my own “inner” meaning thought. One\nor the other side of imaginative-perceptual copresence ordinarily takes\nprecedence. Such variations establish the essential possibility of copresence\nbut do not exhaust it.\nI press the investigation further. If it is possible for two modalities of\nexperience, perception and imagination, to be variably copresent, is there\nThe Polyphony of Experience\n125\nany …",
       "collision": "",
       "type": "passage"
     },
     {
-      "source": "Easter Keller (Keller Easterling) p.13",
-      "text": "elopments have had on our lives. Shaping and managing the story is then also\nan essential skill in infrastructure space. A chapter about these persistent ideological stories follows\nthe examination of broadband.5\nFollowing the discussion of ISO, the final chapter considers an enhanced repertoire for political\nactivism tuned to more effectively address the powers of infrastructure space. The most familiar\nforms of political activism demand declaration. Yet, while there are moments in which to stand up and\ngive it a name, dissent is often fooled by the sneaky way the world works, as the real pow",
+      "source": "Race After Technology (Ruha Benjamin;) p.138",
+      "text": "al. 2018.\n22. Bell and Hartmann 2007.\n23. hooks 1992.\n24. Berrey 2015, p. 7.\n25. Fujii 2017.\n26. Leong 2012, p. 2156.\n27. Visit https://www.youtube.com/watch?v=J-GVd_HLlps.\n28. Halter 2000, p. 5.\n29. Vertesi 2014.\n30. Vertesi 2014.\n31. Braun 2014, p. xv.\n32. Pollock, quoted in Sismondo and Greene 2015.\n33. See Healthcare Hotspotting at https://hotspotting.camdenhealth.org.\n34. Krupar and Ehlers 2017, p. 31.\n35. As quoted in Ehlers and Hinkson 2017, p. 4.\n36. See Healthcare Hotspotting at https://hotspotting.camdenhealth.org.\n37. Legal scholar and historian Jonathan Kahn (2017), for example, …",
       "collision": "",
       "type": "passage"
     },
     {
-      "source": "101 Essays That Will Change The Way You Think (Brianna Wiest) p.124",
-      "text": "relationship may have seemed almost\nunbearable at the time, but the feeling is transitory. The wisdom and\ngrace and knowledge that you carried with you afterwards aren’t.\nThey set a foundation for the rest of your life. The ends far\noutweigh the means, and to be grateful for what you’ve been\nthrough is to completely acknowledge that.\n04. You don’t come across these people by accident; they were your\nteachers and catalysts. In the words of C. Joybell C., we’re all stars\nthat think they’re dying until we realize we’re collapsing into\nsupernovas—to become more beautiful than ever before. It often",
-      "collision": "",
-      "type": "passage"
-    },
-    {
-      "source": "Border As Method, Or, the Multiplication of Labor (Mezzadra, Sandro,Neilson, Brett) p.221",
-      "text": "ship of modern empires with territory.\nThese empires did not have a consistent or continuous means of establishing\nterritorial limits or controls but unevenly covered a patchwork space that\n‘‘was full of holes, stitched together out of pieces, a tangle of strings’’ (700).\nThis gave rise to highly politically differentiated spaces in which the exercise\nof imperial power was not necessarily proportionate to the extension of\nterritory or commensurate with the ﬁxity of borders. ‘‘Though empires did\nlay claim to vast stretches of territory,’’ Benton writes, often the control that\nreinforced these c",
-      "collision": "",
-      "type": "passage"
-    },
-    {
-      "source": "Enciclopedia de cristales, gemas y metales mágicos (Scott Cunningham) p.10",
-      "text": "da de aquellos que habían transmitido el conocimiento de \ngeneración en generación.\nHoy en día ha surgido entre nosotros una nueva conciencia del \nvalor mágico de las piedras y metales. Este repentino interés no tiene \nprecedentes en la historia y, como el creciente uso de hierbas en la \nmagia, es otra manifestación de que las personas están encontrando \nque sus vidas computarizadas no las satisfacen. Algo — la magia— \nestá faltando.\n\nIntroducción\nMi experiencia de dieciséis años en el mundo del chamanismo y la \nmagia, me ha convencido que, en algún momento, lodos los aspectos \nde la existenci",
-      "collision": "",
-      "type": "passage"
-    },
-    {
-      "source": "Voices of the Wild (Bernie Krause) p.171",
-      "text": "of the World, McClelland & Stewart, 1977\n\n164  Further Exploration\n———, A Sound Education, Arcana Editions, 1992\n———, HearSing, Arcana Editions, 2005\n———, Voices of Tyranny, Temples of Silence, Arcana Editions, 1993\nShepard, Paul, The Others: How Animals Made Us Human, Island \nPress, 1996\nSider, Larry, ed., Soundscape: The School of Sound Lectures, Wall-\nflower Press, 1998–2001\nTurner, Jack, The Abstract Wild, University of Arizona Press, 1996\nTO WATCH\nNel Giardino dei Suoni [The Garden of Sound], a film by Nicola \nBellucci, Cineworx/Soap Factory, 2011, with English, French & \nGerman subtitles",
+      "source": "The Discovery of the Unconscious: The History and Evolution of Dynamic Psychiatry (Ellenberger, Henri F.) p.590",
+      "text": "und Druck/ehler, in Goethes Werke \n(Stuttgart and Tiibingen: J. G. Cotta, 1833), XLV, 158-164. \n322. Rudolf Meringer and Carl Mayer, Versprechen und Ver/esen (Berlin: Behrs \nVerlag, 1895). \n323. Hanns Gross, Handbuch fur Untersuchungsrichter, 2te. Vermehrte Aufi. (Graz: \nLeuschner and Lubensky, 1894), pp. 90, 93. \n324. Friedrich Theodor Vischer, Auch Einer. Eine Reisebekanntschaft (Berlin: \nMachler, 1879). \n325. Jules Verne, Voyage au centre de Ia terre (Paris: Hetzel, 1864). \n326. Jules Verne, Vingt Mille Lieues sous /es mers (Paris: Hetzel, 1869). \n327. For instance, Herbert Silberer, Der …",
       "collision": "",
       "type": "passage"
     }

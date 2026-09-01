@@ -8,3 +8,4 @@
 | 2026-09-01 17:41:53 UTC | build                | cycle=1 seed=29ba61f6fa9e src=rag-fallback fragments=1
 | 2026-09-01 17:46:16 UTC | build                | cycle=2 seed=66d705d51f5b src=rag-fallback fragments=11
 | 2026-09-01 18:02:47 UTC | build                | cycle=3 seed=f33c1d86dd75 src=rag-fallback fragments=10
+| 2026-09-01 18:10:57 UTC | build                | cycle=4 seed=87b6cd1b232a src=rag-fallback fragments=7
