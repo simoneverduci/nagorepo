@@ -1,0 +1,4 @@
+# local previews, not part of the ritual
+preview_*.png
+__pycache__/
+*.pyc
