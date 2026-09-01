@@ -1,0 +1,119 @@
+{
+  "cycle": 1,
+  "version": "0.1.0",
+  "built_at": "2026-09-01T16:01:41.042946+00:00",
+  "seed": "009ec5c26f5dcbfe",
+  "obsession": "The will to technology as occult force — do machines dream of magic?",
+  "state_md": [
+    "{{N:GRIMORE}} v0.1.0",
+    "cycle: 1",
+    "built: 2026-09-01T16:01:41.042946+00:00",
+    "obsession: The will to technology as occult force — do machines dream of magic?",
+    "fragments: 13",
+    "commands: help, sigil, read, obsess, trace, status, burn"
+  ],
+  "sigil_params": {
+    "rings": 6,
+    "points_per_ring": 8,
+    "twist": 0.6062661108876228,
+    "spread": 0.4195624815716678,
+    "thickness": 0.5118866092315328,
+    "palette": [
+      "#0a0a0a",
+      "#00ffff",
+      "#008b8b",
+      "#004a4a"
+    ],
+    "noise": 0.04785655829121286,
+    "center_dot": true,
+    "outer_glow": true
+  },
+  "fragments": [
+    {
+      "source": "Archeologies of the Future",
+      "author": "Fredric Jameson",
+      "pages": "308-308",
+      "text": "es, advertisements, \nand packaged libidinal fantasies of all kinds, which characterizes our own daily \nexperience, is suddenly and unexpectedly stilled. We receive this culture with \nall the perplexed exasperation of the city-dweller condemned to insomnia by \nthe oppressive silence of the countryside at night; for us, then, it can serve the \nde familiarizing function of those wondrous words which William Morris \ninscribed under the tide of his own great Utopia, \"an epoch of rest\". \nAll of this can be said in another way by showing that, if Soviet images of \nUtopia are ideological, our own characteristically Western images of cfystopia \nare no less so, and fraught with equally virulent contradictions.9 George \nOrwell's classical and virtually inaugural work in this sub-genre, 1984, can serv..."
+    },
+    {
+      "source": "Matter and Memory",
+      "author": "Henri Bergson",
+      "pages": "178-179",
+      "text": "than the first, because our past experience is \nan individual and no longer a common experience, because we \nhave always many different recollections equally capable of squar­\ning with the same actual situation, and because nature cannot here, \n179 \n\nM A T T E R A N D M E M O R Y \nas i n the case of perception, have one inflexible rule for delimit­\ning our representations. A certain margin is, therefore, necessarily \nleft in this case to fancy; though animals scarcely profit by it, bound \nas they are to material needs, it would seem that the human mind \nceaselessly presses with the totality of its memory against the door \nwhich the body may half open to it: hence the play of fancy and \nthe work of imagination - so many liberties which the mind takes \nwith nature. It is nonetheless true tha..."
+    },
+    {
+      "source": "UtS 22.2_03_Bratich.indd",
+      "author": null,
+      "pages": "25-26",
+      "text": "d struggle. \n25.  This is a pseudonym that combines the names of two authors. \n26.  For a contemporary analysis of these emergent forms of organization, see Van \nMeter, Hughes, and Peace 2010. \n Works Cited \n Andrejevic, M. 2003.  Reality TV: The Work of Being Watched . Lanham, Md.: Roman and \nLittlefi eld. \n Boxer, S. 2005. “Bless Me, Blog, for I’ve Sinned.”  New York Times Online , May 31. Accessed \nApril 17, 2006,  www.nytimes.com/2005/05/31/arts/design/31boxe.html?ei=\n5088&en=60226a17f256 . \nThis content downloaded from 153.104.6.4 on Fri, 09 Jun 2017 15:25:31 UTC\nAll use subject to http://about.jstor.org/terms\n\nUtopian Studies 22.2\n258\n Bratich, J. 2010. “The Digital Touch.”  ephemera 10:303–18. \n Buiani, R. 2005. “Viruses: That Intricate Yarn.”  Digipopo/Public 31,  http://www.digipo..."
+    },
+    {
+      "source": "One-Dimensional Man",
+      "author": "Herbert Marcuse",
+      "pages": "118-119",
+      "text": "ion in which the \nworld can be recognized as what it is. \"The things of everyday \nlife are lifted out of the realm of the self-evident .... \"4 \"That \nwhich is 'natural' must assume the features of the extraordinary. \nOnly in this manner can the laws of cause and effect reveal \nthemselves.\" 5 \nThe \"estrangement-effect\" is not superimposed on literature. \nIt is rather literature's own answer to the threat of total \nbehaviorism-the attempt to rescue the rationality of the nega-\ntive. In this attempt, the great \"conservative\" of literature joins \nforces with the radical activist. Paul Valery insists on the inescap-\nable commitment of the poetic language to the negation. The \nverses of this language \"ne parlent jamais que de chases \nabsentes. \"6 They speak of that which, though absent, haunts t..."
+    },
+    {
+      "source": "On Revolution",
+      "author": "Hannah Arendt",
+      "pages": "229-230",
+      "text": "rs, but they also \ncould not very well wish to deny their own work, although \nJefferson, more concerned with this perplexity than anybody \nelse, almost went t<? this extremity. The perplexity was very \nsimple and, stated in logical terms, it seemed unsolvable: if \nfoundation was the aim and the end of revolution, then the \nrevolutionary spirit was not merely the spirit of beginning some-\nthing new but of starting something permanent and enduring; a \nlasting institution, embodymg this spirit and encouraging it to \nnew achievements, would be s~lf-defeating. From which it un-\nfortunately seems to follow that nothing threatens the very \nachievements of revolution more dangerously and more acutely \nthan the spirit which has brought them about. Should freedom \nin its most exalted sense as freedo..."
+    },
+    {
+      "source": "Learning Java",
+      "author": "Patrick Niemeyer, Jonathan Knudsen",
+      "pages": "851-852",
+      "text": "ns, and it can only store and recover the state of the object that is\nexpressed through a bean’s public properties in this way (using getters and setters).\nWhen you call it, the XMLEncoder attempts to construct an in-memory copy of the\ngraph of beans that you are serializing, using only public constructors and JavaBean\nproperties. As it works, it writes out the steps required as “instructions” in an XML\nformat. Later, the XMLDecoder executes these instructions and reproduces the result.\nThe primary advantage of this process is that it is highly resilient to changes in the\n\nThis is the Title of the Book, eMatter Edition\nDOM\n|\n831\nclass implementation. While standard Java object serialization can accommodate\nmany kinds of “compatible changes” in classes, it requires some help from the devel-..."
+    },
+    {
+      "source": "The World Has Always Been an Internet of Things: Introducing a Mindset for Designers in the Anthropocene",
+      "type": "vault_note",
+      "text": "logue way.\"\n- \"It is experimental in this way and a bit like alchemy, which is the old science of struggling with materials and not quite understanding what is happening.\"\n- \"Although metaphors can be misleading, you don't throw away a tool because it is dangerous. You use it more carefully.\"\n- \"Establishing a new metaphorical understanding of the world as a meshwork of analogue, mutable, fluid, relationships that grow and decay in significance to one another will help explain the way that we are integrated with the world.\"\n\n## Connections\n- [[We Have Never Been Modern]] — agrees with: Fairbrother's entanglement thesis is Latour's non-modernity applied to design; the dissertation explicitly draws on Latour's actor-network work.\n- [[Realist Magic: Objects, Ontology, Causality]] — agrees wit..."
+    },
+    {
+      "source": "The Speculative Turn: Continental Materialism and Realism",
+      "type": "vault_note",
+      "text": "t) against Grant's Schellingian anteriority, Brassier's eliminativist Sellarsianism against Deleuzian panpsychism, and a politics section that shows SR's central weakness — it has no theory of action, event, or subject. The most cluster-relevant essays are Catren's CCRU-era \"Outland Empire\" (speculative philosophy as a CCRU afterlife) and Protevi's \"Ontology, Biology, and History of Affect,\" which offers a scientific, anti-meme mechanism for how cultural practices produce real bodily effects — the \"body politic\" as the site where belief becomes physiology.\n\n## Key ideas\n- **Correlationism is the enemy.** \"the idea according to which we only ever have access to the correlation between thinking and being, and never to either term considered apart from the other\" (p3, Meillassoux). Its roots:..."
+    },
+    {
+      "source": "The Oxford Handbook of 4E Cognition",
+      "author": "Albert Newen, Leon de Bruin, Shaun Gallagher",
+      "pages": "372-372",
+      "text": "atic, evolutionary account of “neural reuse” and the notion of \nexaptation (2014, p. 6). Thus, for Gallese, embodied simulation “and the underpinning \n[mirror mechanisms,] by means of neural reuse can constitutively account for the rep­\nresentation of the motor goals of others’ actions by reusing one’s own bodily formatted \nmotor representations, as well as of others’ emotions and sensations by reusing one’s \nown visceromotor and sensorimotor representations” (2014, p. 7).1\nThe very same behavioral and neuroscientific studies that Goldman appeals to \nin order to support the notion of B-​formatted cognition, however, also support the \nmore radical notions of embodied cognition that suggest the body itself, or more \nprecisely, the body as it is coupled to the environment, and not just B-​for..."
+    },
+    {
+      "source": "White Beech: The Rainforest Years",
+      "author": "Greer, Germaine",
+      "pages": "343-344",
+      "text": "ing its soft deep ooom-ooom. When I have\nsupper on the verandah it often perches at the edge of the\nﬁeld of light, waiting for groggy insects, tame as you like.\nWe try to tell ourselves that it is the rarer version, the\nMarbled Frogmouth (Podargus ocellatus), and it certainly has\nthe necessary tuft of feathers over its bill, but it isn’t.\nWe can’t leave our hunting birds without considering the\nkingﬁsher family. Everybody knows the kookaburra, though\nvery few are aware that kookaburras come in several\nspecies. Our is the Blue-winged Kookaburra, Dacelo leachii,\nwhich cannot manage to laugh. It starts up a kind of manic\ngargling which builds for a few seconds and then collapses\ninto a gravelly burble. Then there are our Azure Kingﬁshers\n\n(Alcedo azurea azurea), that nest in the creek bank. T..."
+    },
+    {
+      "source": "AGI - Spiritually Weak Men Must Not Lead",
+      "type": "vault_note",
+      "text": "men continued to persist and spread their word?\nThey were quite active in the world, to be sure. I don't know what their reasons were for not just giving up and living in total seclusion or whatever, but as for me...\n>If nothing truly matters as you say and is of no value, why do you persist?\n...If you mean to ask why don't I kill myself? It's because I have a conscience about the impact that would have on my parents. That may seem to contradict my \"cosmic nihilism\" as you call it, but whatever; I don't pretend to be a perfectly rational being. it is what it is. If it's within my power I will not harm another being.\n>yet it is so curious you never contemplated the very basic and material things which allow such thoughts to arise. Is the food on your plate spiritual or material? Your home, ..."
+    },
+    {
+      "source": "The Hidden History of Money & New World Order Usury Secrets",
+      "author": "Alexander James (comp.)",
+      "pages": "633-633",
+      "text": "and \nGenerals, some of the most patriotic flag officers in the history of this Republic. They vowed, under the Uniform Military \nCode, to arrest their Commander-in-Chief Bill Clinton, for his various acts of treason aiding and abetting sworn enemies of \nthe United States who are working to bring about the Illuminati New World Order.  \n \nIf Clinton had them arrested for mutiny, they were prepared, if not assassinated, to defend themselves with their heavily \ndocumented charges of his treachery against the U.S. Constitution and the people of the United States. The purpose to \npull off a coup was NOT to install a junta [pronounced HOON-tah], that is, an evil military dictatorship. Rather, to restore \nby necessary force the American Republic, which has gone down hill since the overthrow, by th..."
+    },
+    {
+      "source": "The Last Whole Earth Catalog: Access to Tools",
+      "author": "Stewart Brand",
+      "pages": "441-441",
+      "text": "ght into Fall CA TALOG\nproduction. We were late, so we had to do it in two weeks.\nFred\nwas going to take over the camera. We had a hot new typist, Cappy\nMcClure. We had a big new Stat-King that wasn't worth\nit.\nJoe\nbrought in his brother Jay to double our layout speed. We worked\n80 hours a week. We got to the printer on time.\nThen Christmas was on us like a cat on a mouse.\nEverybody was\noverloaded at the store.\nIn January we had another burst of\nhiring, practically whoever came in the door.\nLes Rosen the book-\nkeeping ex-Marine, John Clark, Russell Bass, Jerry Fihn, Alan\nBurton, Leslie Acoca, the booklover Laura Besserman. Pam Smith\nwas cooking lunch.\nWhen Tracy left to Canada, Pam's husband JD\ncame in as manager. JD instituted a fine addition to the Storefront—\na Free Box (\"take or leave\"..."
+    }
+  ],
+  "log": [
+    {
+      "cycle": 1,
+      "timestamp": "2026-09-01T16:01:41.042946+00:00",
+      "seed": "009ec5c26f5dcbfe",
+      "obsession": "The will to technology as occult force — do machines dream of magic?",
+      "fragments": 13,
+      "message": "Cycle 1: seeded with 'The will to technology as occult force —...' (13 fragments)"
+    }
+  ],
+  "repo": "simoneverduci/nagorepo"
+}

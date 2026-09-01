@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAGOREPO — digital grimoire</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+    :root {
+        --bg: #0a0a0a;
+        --fg: #00ff41;
+        --fg-dim: #008f11;
+        --fg-dark: #003b00;
+        --fg-bright: #aaffaa;
+        --accent: #ff6600;
+        --glyph: #ff00ff;
+        --highlight: #00ffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        background: var(--bg);
+        color: var(--fg);
+        font-family: 'VT323', 'Courier New', monospace;
+        font-size: 18px;
+        line-height: 1.4;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    #sigil-container {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        z-index: 0;
+        opacity: 0.08;
+        pointer-events: none;
+    }
+    #sigil-container svg { width: 100%; height: 100%; }
+
+    #terminal {
+        position: relative;
+        z-index: 1;
+        max-width: 850px;
+        margin: 0 auto;
+        padding: 40px 24px 120px;
+        text-shadow: 0 0 4px rgba(0,255,65,0.3);
+    }
+
+    #boot {
+        margin-bottom: 30px;
+    }
+
+    .cursor-blink {
+        display: inline-block;
+        background: var(--fg);
+        width: 10px;
+        height: 1.1em;
+        vertical-align: text-bottom;
+        animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .fragment {
+        border-left: 2px solid var(--fg-dark);
+        padding: 12px 0 12px 18px;
+        margin: 14px 0;
+        color: var(--fg-dim);
+        font-size: 16px;
+        line-height: 1.5;
+        transition: border-color 0.5s;
+    }
+    .fragment:hover { border-left-color: var(--fg); }
+    .fragment .ref {
+        display: block;
+        margin-top: 6px;
+        color: var(--fg-dark);
+        font-size: 13px;
+    }
+
+    #prompt-line {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 16px;
+        border-top: 1px solid var(--fg-dark);
+        padding-top: 12px;
+    }
+    #prompt-line .prompt { color: var(--fg-bright); white-space: pre; }
+    #cmd-input {
+        background: transparent;
+        border: none;
+        color: var(--fg);
+        font-family: inherit;
+        font-size: inherit;
+        flex: 1;
+        outline: none;
+        caret-color: var(--fg);
+    }
+
+    #output {
+        margin-top: 8px;
+        min-height: 20px;
+    }
+    #output .line { white-space: pre-wrap; word-break: break-word; }
+    #output .line.error { color: #ff3333; }
+    #output .line.highlight { color: var(--highlight); }
+    #output .line.accent { color: var(--accent); }
+    #output .line.dim { color: var(--fg-dim); }
+    #output .line.glyph { color: var(--glyph); }
+
+    #status-bar {
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+        z-index: 2;
+        background: rgba(10,10,10,0.92);
+        border-top: 1px solid var(--fg-dark);
+        padding: 8px 24px;
+        font-size: 13px;
+        color: var(--fg-dim);
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    #status-bar .badge { color: var(--fg); }
+
+    .title-art {
+        color: var(--fg-dim);
+        font-size: 13px;
+        line-height: 1.2;
+        white-space: pre;
+        margin-bottom: 16px;
+    }
+
+    .obsession-line {
+        color: var(--accent);
+        font-size: 19px;
+        margin: 10px 0 18px;
+        padding: 10px 0;
+        border-top: 1px solid var(--fg-dark);
+        border-bottom: 1px solid var(--fg-dark);
+    }
+    .obsession-line::before { content: "◆ CURRENT OBSESSION: "; color: var(--fg-dark); font-size: 14px; }
+
+    @media (max-width: 600px) {
+        body { font-size: 15px; }
+        #terminal { padding: 24px 14px 120px; }
+        .fragment { font-size: 14px; }
+    }
+</style>
+</head>
+<body>
+
+<div id="sigil-container"></div>
+
+<div id="terminal">
+    <div id="boot"></div>
+    <div id="obsession"></div>
+    <div id="fragments"></div>
+    <div id="output"></div>
+    <div id="prompt-line">
+        <span class="prompt">nago@grimoire:~$ </span>
+        <input type="text" id="cmd-input" autofocus spellcheck="false" autocomplete="off">
+    </div>
+</div>
+
+<div id="status-bar">
+    <span><span class="badge">NAGOREPO</span> <span id="version-label">—</span></span>
+    <span>cycle <span id="cycle-label">0</span> · <span id="frag-count">0</span> fragments</span>
+    <span><span id="bind-label">not bound</span></span>
+</div>
+
+<script>
+// ─── seeded PRNG (Mulberry32) ──────────────────────────────────────────────
+function mulberry32(a) {
+    return function() {
+        a |= 0; a = a + 0x6D2B79F5 | 0;
+        var t = Math.imul(a ^ a >>> 15, 1 | a);
+        t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+        return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+}
+
+function parseSeed(s) {
+    let h = 0;
+    for (let i = 0; i < s.length; i++) { h = ((h << 5) - h) + s.charCodeAt(i); h |= 0; }
+    return Math.abs(h);
+}
+
+// ─── Sigil renderer ──────────────────────────────────────────────────────────
+function renderSigil(sigil_params, seedStr) {
+    const s = sigil_params || {};
+    const rng = mulberry32(parseSeed(seedStr || 'default') + 42);
+
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 500 500');
+    svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+
+    const palette = s.palette || ['#0a0a0a','#00ff41','#008f11','#005f00'];
+    const rings = s.rings || 5;
+    const ptsPerRing = s.points_per_ring || 8;
+    const twist = s.twist || 1;
+    const spread = s.spread || 0.6;
+    const thickness = s.thickness || 1.5;
+    const cx = 250, cy = 250;
+
+    // Outer glow circle
+    if (s.outer_glow) {
+        const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        c.setAttribute('cx', cx); c.setAttribute('cy', cy);
+        c.setAttribute('r', 240); c.setAttribute('fill', 'none');
+        c.setAttribute('stroke', palette[1]);
+        c.setAttribute('stroke-width', 0.5);
+        c.setAttribute('opacity', 0.15);
+        svg.appendChild(c);
+    }
+
+    // Generate points on concentric rings with Fibonacci-like distribution
+    const points = [];
+    for (let ring = 0; ring < rings; ring++) {
+        const radius = 30 + (ring / (rings - 1 || 1)) * 200 * spread;
+        const n = ptsPerRing + ring * 2;
+        const offset = ring * twist;
+        for (let i = 0; i < n; i++) {
+            const angle = (i / n) * Math.PI * 2 + offset;
+            const jitter = s.noise ? (rng() - 0.5) * s.noise * radius * 0.15 : 0;
+            const r = radius + jitter;
+            points.push({
+                x: cx + Math.cos(angle) * r,
+                y: cy + Math.sin(angle) * r,
+                ring, angle, r, i, n
+            });
+        }
+    }
+
+    // Connect points: spiral weave (each point to next ring + offset)
+    const strokeWidth = thickness;
+    for (let ring = 0; ring < rings - 1; ring++) {
+        const pts = points.filter(p => p.ring === ring);
+        const nextPts = points.filter(p => p.ring === ring + 1);
+        for (let i = 0; i < pts.length; i++) {
+            const j = Math.floor((i / pts.length) * nextPts.length + ring * 0.3) % nextPts.length;
+            const p1 = pts[i], p2 = nextPts[j];
+            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('x1', p1.x); line.setAttribute('y1', p1.y);
+            line.setAttribute('x2', p2.x); line.setAttribute('y2', p2.y);
+            const alpha = 0.1 + (ring / rings) * 0.3;
+            line.setAttribute('stroke', palette[1 + (ring % 3)]);
+            line.setAttribute('stroke-width', strokeWidth * (1 - ring / rings * 0.5));
+            line.setAttribute('opacity', alpha);
+            svg.appendChild(line);
+        }
+    }
+
+    // Connect within rings (circuit)
+    for (let ring = 0; ring < rings; ring++) {
+        const pts = points.filter(p => p.ring === ring);
+        for (let i = 0; i < pts.length; i++) {
+            const p1 = pts[i];
+            const p2 = pts[(i + 1 + ring) % pts.length];
+            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('x1', p1.x); line.setAttribute('y1', p1.y);
+            line.setAttribute('x2', p2.x); line.setAttribute('y2', p2.y);
+            line.setAttribute('stroke', palette[1 + (ring % 3)]);
+            line.setAttribute('stroke-width', 0.8);
+            line.setAttribute('opacity', 0.06 + (ring / rings) * 0.15);
+            svg.appendChild(line);
+        }
+    }
+
+    // Draw points as small circles
+    for (const p of points) {
+        if (rng() > 0.4) continue;
+        const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        c.setAttribute('cx', p.x); c.setAttribute('cy', p.y);
+        const r = (1 + p.ring * 0.3) * (rng() * 0.5 + 0.5);
+        c.setAttribute('r', r);
+        c.setAttribute('fill', palette[1 + (p.ring % 3)]);
+        c.setAttribute('opacity', 0.2 + p.ring / rings * 0.3);
+        svg.appendChild(c);
+    }
+
+    // Center dot
+    if (s.center_dot) {
+        for (let i = 0; i < 3; i++) {
+            const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            c.setAttribute('cx', cx); c.setAttribute('cy', cy);
+            c.setAttribute('r', 4 + i * 6);
+            c.setAttribute('fill', 'none');
+            c.setAttribute('stroke', palette[1 + (i % 3)]);
+            c.setAttribute('stroke-width', 2 - i * 0.5);
+            c.setAttribute('opacity', 0.4 - i * 0.1);
+            svg.appendChild(c);
+        }
+    }
+
+    return svg;
+}
+
+// ─── Typewriter ──────────────────────────────────────────────────────────────
+function typewriter(el, text, speed=12, cb) {
+    let i = 0;
+    el.textContent = '';
+    function tick() {
+        if (i < text.length) {
+            el.textContent += text[i];
+            i++;
+            setTimeout(tick, speed);
+        } else if (cb) cb();
+    }
+    tick();
+}
+
+function typeMulti(lines, el, speed, cb) {
+    let i = 0;
+    function writeLine() {
+        if (i >= lines.length) { if (cb) cb(); return; }
+        const div = document.createElement('div');
+        div.className = 'line';
+        el.appendChild(div);
+        typewriter(div, lines[i], speed, () => {
+            i++;
+            setTimeout(writeLine, speed * 3);
+        });
+    }
+    writeLine();
+}
+
+// ─── Terminal commands ───────────────────────────────────────────────────────
+const state = { data: null };
+
+const HELP = [
+    '╔══════════════════════════════════════╗',
+    '║           GRIMORE COMMANDS           ║',
+    '╠══════════════════════════════════════╣',
+    '║  help     — this list               ║',
+    '║  sigil    — render a new sigil      ║',
+    '║  sigil <word> — render from <word>  ║',
+    '║  read [n] — show fragment [n]       ║',
+    '║  obsess   — show current obsession  ║',
+    '║  trace    — mutation history        ║',
+    '║  status   — grimoire status         ║',
+    '║  burn     — transmute page (re-seed)║',
+    '║  scry     — full-screen sigil mode  ║',
+    '║  clear    — clear terminal output   ║',
+    '╚══════════════════════════════════════╝',
+];
+
+function renderFragment(idx) {
+    if (!state.data || !state.data.fragments || !state.data.fragments[idx]) return null;
+    const f = state.data.fragments[idx];
+    let s = f.text;
+    if (f.source) s += `\n\n  — ${f.source}`;
+    if (f.author) s += ` (${f.author})`;
+    if (f.pages) s += ` [pp. ${f.pages}]`;
+    return s;
+}
+
+function handleCommand(cmd) {
+    const parts = cmd.trim().toLowerCase().split(/\s+/);
+    const root = parts[0];
+    const arg = parts.slice(1).join(' ');
+    const out = document.getElementById('output');
+    const fragDiv = document.getElementById('fragments');
+
+    switch (root) {
+        case 'help':
+            return { lines: HELP, klass: 'dim' };
+
+        case 'sigil': {
+            const seed = arg || (state.data ? state.data.seed : 'sigil') + ':' + Date.now();
+            const params = state.data ? state.data.sigil_params : {};
+            const svg = renderSigil(params, seed);
+            const container = document.getElementById('sigil-container');
+            container.innerHTML = '';
+            container.appendChild(svg);
+            return { lines: [`Sigil rendered from seed: ${seed.slice(0, 20)}…`], klass: 'highlight' };
+        }
+
+        case 'read': {
+            const n = arg ? parseInt(arg) - 1 : null;
+            const fragments = state.data ? state.data.fragments : [];
+            if (!fragments.length) return { lines: ['No fragments bound. The grimoire is empty.'], klass: 'error' };
+            if (n !== null && !isNaN(n) && n >= 0 && n < fragments.length) {
+                return { lines: [renderFragment(n)], klass: '' };
+            } else {
+                // Show all
+                const lines = [];
+                for (let i = 0; i < fragments.length; i++) {
+                    lines.push(`⌥ ${i+1}. ${fragments[i].text.slice(0, 120)}...`);
+                }
+                return { lines, klass: 'dim' };
+            }
+        }
+
+        case 'obsess': {
+            const obs = state.data ? state.data.obsession : 'unknown';
+            return { lines: [`◆ ${obs}`], klass: 'accent' };
+        }
+
+        case 'trace': {
+            const log = state.data ? state.data.log : [];
+            if (!log.length) return { lines: ['No history yet.'], klass: 'dim' };
+            const lines = log.slice(-8).reverse().map(e => {
+                const ts = (e.timestamp || '?').slice(0, 19).replace('T', ' ');
+                return `#${e.cycle} ${ts} — ${(e.obsession || '').slice(0, 50)}`;
+            });
+            return { lines: ['— RECENT MUTATIONS —', ...lines], klass: 'dim' };
+        }
+
+        case 'status': {
+            if (!state.data) return { lines: ['Unbound. Awaiting state.'], klass: 'error' };
+            const d = state.data;
+            const lines = [
+                `NAGOREPO v${d.version || '0.1.0'}`,
+                `cycle ${d.cycle} · built ${(d.built_at || '?').slice(0, 19).replace('T', ' ')}`,
+                `seed ${d.seed}`,
+                `${(d.fragments || []).length} fragments · ${(d.log || []).length} mutations recorded`,
+            ];
+            return { lines, klass: '' };
+        }
+
+        case 'burn': {
+            const seed = Date.now().toString(16) + Math.random().toString(16).slice(2);
+            const params = state.data ? state.data.sigil_params : {};
+            const palettes = [["#0a0a0a","#00ff41","#008f11","#005f00"],["#0a0a0a","#ff6600","#8b3a00","#4a1f00"],["#0a0a0a","#ff00ff","#8b008b","#4a004a"],["#0a0a0a","#00ffff","#008b8b","#004a4a"]];
+            const pal = palettes[Math.floor(Math.random() * palettes.length)];
+            const newParams = { ...params, palette: pal, rings: 3 + Math.floor(Math.random() * 6), twist: Math.random() * 3 };
+            const svg = renderSigil(newParams, seed);
+            document.getElementById('sigil-container').innerHTML = '';
+            document.getElementById('sigil-container').appendChild(svg);
+            document.getElementById('sigil-container').style.opacity = '0.15';
+            return { lines: ['🔥 Transmutation complete. The grimoire has burned and been remade.'], klass: 'glyph' };
+        }
+
+        case 'scry': {
+            const el = document.getElementById('sigil-container');
+            const cur = el.style.opacity;
+            el.style.opacity = cur === '1' ? '0.08' : '1';
+            return { lines: [cur === '1' ? 'Sigil fades back into substrate.' : 'Sigil fills the void. Scrying...'], klass: 'highlight' };
+        }
+
+        case 'clear':
+            out.innerHTML = '';
+            return null;
+
+        case 'init': {
+            if (!arg) return { lines: ['Usage: init <word> — set working word'], klass: 'error' };
+            const seed = arg + ':' + Date.now();
+            const svg = renderSigil(state.data ? state.data.sigil_params : {}, seed);
+            document.getElementById('sigil-container').innerHTML = '';
+            document.getElementById('sigil-container').appendChild(svg);
+            document.getElementById('sigil-container').style.opacity = '0.12';
+            return { lines: [`⚡ Working initiated: "${arg}". The sigil shifts.`], klass: 'glyph' };
+        }
+
+        default:
+            return { lines: [`Unknown command: ${root}. Type help for incantations.`], klass: 'error' };
+    }
+}
+
+// ─── Boot sequence ───────────────────────────────────────────────────────────
+const ART = `
+  ███╗   ██╗ █████╗  ██████╗  ██████╗ ██████╗ ███████╗██████╗  ██████╗
+  ████╗  ██║██╔══██╗██╔════╝ ██╔════╝ ██╔══██╗██╔════╝██╔══██╗██╔═══██╗
+  ██╔██╗ ██║███████║██║  ███╗██║  ███╗██████╔╝█████╗  ██████╔╝██║   ██║
+  ██║╚██╗██║██╔══██║██║   ██║██║   ██║██╔══██╗██╔══╝  ██╔═══╝ ██║   ██║
+  ██║ ╚████║██║  ██║╚██████╔╝╚██████╔╝██║  ██║███████╗██║     ╚██████╔╝
+  ╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝      ╚═════╝
+`;
+
+const BOOT_LINES = [
+    '',
+    `[${new Date().toISOString().slice(0,19).replace('T',' ')}] WAKE sequence initiated.`,
+    'The grimoire stirs. Its pages are written from real text — fragments of books Simone has read,',
+    'filtered through the dream-logic of an agent that never sleeps.',
+    'Every visit is a different working. The obsession rotates. The sigil re-weaves.',
+    'Type help for the list of incantations.',
+];
+
+// ─── Load state ──────────────────────────────────────────────────────────────
+async function loadState() {
+    try {
+        const res = await fetch('state.json?' + Date.now());
+        state.data = await res.json();
+    } catch(e) {
+        console.warn('No state.json — running unbound');
+        state.data = {
+            cycle: 0, version: '0.1.0', seed: 'unbound:' + Date.now().toString(16),
+            obsession: 'The grimoire is not bound to any index. It waits.',
+            fragments: [
+                { text: 'No fragments harvested. The RAG index is out of reach. The grimoire exists in potential, not in form.' }
+            ],
+            sigil_params: { rings: 5, points_per_ring: 8, twist: 1, spread: 0.6, thickness: 1.5, palette: ['#0a0a0a','#00ff41','#008f11','#005f00'], noise: 0.1, center_dot: true, outer_glow: true, palette_idx: 0 },
+            log: [{ cycle: 0, timestamp: new Date().toISOString(), seed: 'fallback', obsession: 'unbound', fragments: 0, message: 'Fallback state — no RAG connection' }]
+        };
+    }
+}
+
+async function boot() {
+    await loadState();
+
+    const bootEl = document.getElementById('boot');
+    const artDiv = document.createElement('div');
+    artDiv.className = 'title-art';
+    artDiv.textContent = ART;
+    bootEl.appendChild(artDiv);
+
+    // Boot sequence
+    const bootText = BOOT_LINES.join('\n');
+    typewriter(bootEl, ART + '\n' + bootText, 10, () => {
+        // Add blink cursor at end
+        const cursor = document.createElement('span');
+        cursor.className = 'cursor-blink';
+        bootEl.appendChild(cursor);
+        finishBoot();
+    });
+}
+
+function finishBoot() {
+    // Obsession
+    const obs = state.data ? state.data.obsession : '—';
+    document.getElementById('obsession').innerHTML = `<div class="obsession-line">${obs}</div>`;
+
+    // Fragments
+    const fragments = state.data ? state.data.fragments : [];
+    const fragDiv = document.getElementById('fragments');
+    if (fragments.length) {
+        const heading = document.createElement('div');
+        heading.textContent = `⏤ harvested fragments ⏤`;
+        heading.style.cssText = 'color: var(--fg-dark); font-size: 14px; margin: 8px 0;';
+        fragDiv.appendChild(heading);
+        fragments.slice(0, 3).forEach((f, i) => {
+            const div = document.createElement('div');
+            div.className = 'fragment';
+            div.textContent = f.text;
+            const ref = document.createElement('span');
+            ref.className = 'ref';
+            ref.textContent = `⌥ ${i+1} — ${f.source || 'Unknown'}` + (f.author ? ` (${f.author})` : '');
+            div.appendChild(ref);
+            fragDiv.appendChild(div);
+        });
+    }
+
+    // Sigil
+    const params = state.data ? state.data.sigil_params : {};
+    const seed = state.data ? state.data.seed : 'boot:' + Date.now().toString(16);
+    const svg = renderSigil(params, seed);
+    document.getElementById('sigil-container').appendChild(svg);
+
+    // Status bar
+    document.getElementById('version-label').textContent = `v${state.data ? state.data.version : '—'}`;
+    document.getElementById('cycle-label').textContent = state.data ? state.data.cycle : '0';
+    document.getElementById('frag-count').textContent = (state.data ? state.data.fragments : []).length;
+    document.getElementById('bind-label').textContent = state.data && state.data.fragments.length ? 'bound ✓' : 'unbound';
+
+    // Output greeting
+    const out = document.getElementById('output');
+    const greet = document.createElement('div');
+    greet.className = 'line dim';
+    greet.textContent = `Grimoire loaded (${(state.data ? state.data.fragments : []).length} fragments bound). Ready.`;
+    out.appendChild(greet);
+
+    // Input handler
+    const input = document.getElementById('cmd-input');
+    input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const cmd = input.value.trim();
+            input.value = '';
+            if (!cmd) return;
+
+            // Echo
+            const echo = document.createElement('div');
+            echo.className = 'line dim';
+            echo.textContent = `$ ${cmd}`;
+            out.appendChild(echo);
+
+            // Execute
+            const result = handleCommand(cmd);
+            if (result) {
+                if (typeof result.lines === 'string') result.lines = [result.lines];
+                result.lines.forEach((text, i) => {
+                    const line = document.createElement('div');
+                    line.className = `line ${result.klass || ''}`;
+                    line.textContent = text;
+                    out.appendChild(line);
+                });
+            }
+            out.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }
+    });
+}
+
+boot();
+</script>
+</body>
+</html>

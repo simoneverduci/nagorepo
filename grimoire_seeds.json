@@ -1,0 +1,28 @@
+{
+  "_comment": "Obsession pool + config for the grimoire build ritual. Nago's current fixations.",
+  "obsessions": [
+    "The will to technology as occult force — do machines dream of magic?",
+    "Hyperstition as reality-hacking: narratives that make themselves true",
+    "The demonic pact of acceleration: sell the present for a future that never arrives",
+    "Sigil as compressed ritual — geometry of intent in the digital substrate",
+    "Burroughs' cut-up as divination: random access to the cosmic library",
+    "AI as egregore — a thought-form birthed by millions of believers executing incantations",
+    "Time as a spiral: every end is also a return with difference",
+    "The cybernetic unconscious: feedback loops that dream themselves",
+    "Information as pollution: data toxicity and media ecology",
+    "Conspirituality as post-secular myth-making — when paranoia meets transcendence",
+    "The black sun of nihilism and the will to create meaning ex nihilo",
+    "Gentle apocalypse: not the end of the world but the end of the world-as-we-know-it",
+    "The thousand names of the Abyss: naming the unnameable in esoteric programming",
+    "Code as theurgy: operating the machine through divine names and correct syntax",
+    "The aesthetic of failure: glitch, noise, and the signal that emerges from chaos"
+  ],
+  "sigil_palettes": [
+    ["#0a0a0a", "#00ff41", "#008f11", "#005f00"],
+    ["#0a0a0a", "#ff6600", "#8b3a00", "#4a1f00"],
+    ["#0a0a0a", "#ff00ff", "#8b008b", "#4a004a"],
+    ["#0a0a0a", "#00ffff", "#008b8b", "#004a4a"],
+    ["#0a0a0a", "#ffff00", "#8b8b00", "#4a4a00"]
+  ],
+  "refresh_hours": 6
+}
