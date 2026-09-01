@@ -1,70 +1,34 @@
 {
-  "cycles": 4,
-  "seed": "87b6cd1b232af05a",
-  "generated_at": "2026-09-01T18:10:57Z",
-  "obsession": "Burroughs' cut-up as divination: random access to the cosmic library",
-  "book": "If They Come in the Morning (Angela Davis) p.159",
-  "collision": "seed cycle",
-  "mutation_note": "",
+  "cycles": 5,
+  "seed": "ba5a483a16bd85aa",
+  "generated_at": "2026-09-01T22:05:46Z",
+  "obsession": "q0097 — the lock's life-cycle (DEEP continuation, Doctorow b0274)",
+  "book": "Information Doesn't Want to Be Free (Cory Doctorow, 2014)",
+  "collision": "Apple is the lock's most aggressive enforcer (c01903, p.38-40), yet the lock's own store converts its paying customers into pirates (c01926, p.58-59) — the enforcer's refusal to sell is the lock's commercial function",
+  "mutation_note": "the lock was never trying to stop the copy — it was manufacturing the pirate as a standing customer of the exclusion; the enforcer is the converter, and the converter is the enforcer's own storefront",
   "sigil_params": {
-    "rings": 5,
-    "twist": 0.76,
-    "weave_density": 2,
-    "pulse_speed": 6.7,
+    "rings": 11,
+    "twist": 1.13,
+    "weave_density": 4,
+    "pulse_speed": 2.0,
     "palette": [
-      "#8844ff",
-      "#6633cc",
-      "#442288",
-      "#aa66ff"
+      "#ffffff",
+      "#aaaaaa",
+      "#555555",
+      "#cccccc"
     ],
-    "bg_alpha": 0.092,
-    "rune_count": 8,
+    "bg_alpha": 0.041,
+    "rune_count": 12,
     "center_emblem": 0
   },
-  "source_type": "rag_bootstrap",
-  "run_n": 4,
+  "source_type": "phase4",
+  "run_n": 65,
   "fragments": [
     {
-      "source": "If They Come in the Morning (Angela Davis) p.159",
-      "text": ". She saw the symbols of\nlaw and order represented by the likes of George Wallace and Bull Connor, the\nburning cross of the old South, the electric cattle prods of the new. Yet she also\nsaw, among her generation, the first glimmerings of a renewed resistance, and\nshe joined that resistance, picketing segregated facilities, canvassing in voter\nregistration, participating in integrated study groups. These early years were\nyears of young hopes, old, abiding fears. She lived on “Dynamite Hill,” where\nBlack families lived in constant fear of racist reprisals. “Every night now,” she\nwrote, “I’ll …",
-      "collision": "",
-      "type": "passage"
-    },
-    {
-      "source": "Algorithmic Anxiety in Contemporary Art: A Kierkegaardian Inquiry into the Imaginary of Possibility (Patricia de Vries) p.75",
-      "text": "n the floors and in the \noffices that Fragments on Machines depicts, we don’t find white-collar workers sat in cubicles. \nThe camera pans along the lines and grids of server rooms, cables and wires in all colors, air \nventilation systems, computer buttons, rubber tubes, and along endless, brightly lit corridors \nand aisles full of whirring machines where the activities of algorithmic trading are supposed \nto ‘happen’. The film shows an abundance of images with no human in sight. Here, Charles \nseems to allude to the Grundrisse, in which Marx contends that machines become an abstract, …",
-      "collision": "",
-      "type": "passage"
-    },
-    {
-      "source": "Breasts and Eggs (Mieko Kawakami;) p.65",
-      "text": "way, we were like is China really as strict as everyone says? Or, you\nknow, as poor? Do people really ride around on bikes dressed up in Mao suits? I\nasked her about this thing I saw once on TV, where they said everyone in China\nwas drinking oolong tea out of empty Nescafé bottles. And Jing Li was like\nyeah, that’s what it’s like. People act like the Beijing Olympics is going to save\nChina, but it’s all lies. It’ll help a small handful of people, but almost everybody\nis broke, so they have to scrape by. Most of the country is totally behind. When\nthere was that earthquake in Sichuan, that …",
-      "collision": "",
-      "type": "passage"
-    },
-    {
-      "source": "Sobre la bilis negra o mal de Saturno (Rafael Núñez Florencio) p.14",
-      "text": ". Las enfermedades del alma en la España del Siglo de Oro. Barcelona: Anagrama, 2001.\n• Burton R. Anatomía de la melancolía. Madrid: Alianza, 2006.\nSobre la bilis negra o mal de Saturno\n• Diego R y Vázquez L. eds. Humores negros. Del tedio, la melancolía, el esplín y otros aburrimientos. Madrid: Biblioteca Nueva, 1998.\n• Ehrenreich B. Una historia de la alegría. Barcelona: Paidós, 2008.\n• Földényi LF. Melancolía. Barcelona: Galaxia Gutenberg/Círculo de Lectores, 1998.\n• García Gibert J. Cervantes y la melancolía: ensayos sobre el tono y la actitud cervantinos. Valencia:\nAlfons El Magnànim, …",
-      "collision": "",
-      "type": "passage"
-    },
-    {
-      "source": "Listening and Voice : Phenomenologies of Sound (Sheila) p.145",
-      "text": "myself “wandering off”\ninto my own thought, perhaps stimulated by what I have read, and before\nlong the reading has receded and become “mechanical” as I move from the\nmeaning in the words to focus on my own “inner” meaning thought. One\nor the other side of imaginative-perceptual copresence ordinarily takes\nprecedence. Such variations establish the essential possibility of copresence\nbut do not exhaust it.\nI press the investigation further. If it is possible for two modalities of\nexperience, perception and imagination, to be variably copresent, is there\nThe Polyphony of Experience\n125\nany …",
-      "collision": "",
-      "type": "passage"
-    },
-    {
-      "source": "Race After Technology (Ruha Benjamin;) p.138",
-      "text": "al. 2018.\n22. Bell and Hartmann 2007.\n23. hooks 1992.\n24. Berrey 2015, p. 7.\n25. Fujii 2017.\n26. Leong 2012, p. 2156.\n27. Visit https://www.youtube.com/watch?v=J-GVd_HLlps.\n28. Halter 2000, p. 5.\n29. Vertesi 2014.\n30. Vertesi 2014.\n31. Braun 2014, p. xv.\n32. Pollock, quoted in Sismondo and Greene 2015.\n33. See Healthcare Hotspotting at https://hotspotting.camdenhealth.org.\n34. Krupar and Ehlers 2017, p. 31.\n35. As quoted in Ehlers and Hinkson 2017, p. 4.\n36. See Healthcare Hotspotting at https://hotspotting.camdenhealth.org.\n37. Legal scholar and historian Jonathan Kahn (2017), for example, …",
-      "collision": "",
-      "type": "passage"
-    },
-    {
-      "source": "The Discovery of the Unconscious: The History and Evolution of Dynamic Psychiatry (Ellenberger, Henri F.) p.590",
-      "text": "und Druck/ehler, in Goethes Werke \n(Stuttgart and Tiibingen: J. G. Cotta, 1833), XLV, 158-164. \n322. Rudolf Meringer and Carl Mayer, Versprechen und Ver/esen (Berlin: Behrs \nVerlag, 1895). \n323. Hanns Gross, Handbuch fur Untersuchungsrichter, 2te. Vermehrte Aufi. (Graz: \nLeuschner and Lubensky, 1894), pp. 90, 93. \n324. Friedrich Theodor Vischer, Auch Einer. Eine Reisebekanntschaft (Berlin: \nMachler, 1879). \n325. Jules Verne, Voyage au centre de Ia terre (Paris: Hetzel, 1864). \n326. Jules Verne, Vingt Mille Lieues sous /es mers (Paris: Hetzel, 1869). \n327. For instance, Herbert Silberer, Der …",
-      "collision": "",
-      "type": "passage"
+      "source": "Information Doesn't Want to Be Free (Cory Doctorow, 2014)",
+      "text": "Digital locks turn paying customers into pirates... Locking users out doesn't reduce downloads, it reduces sales. (p.59)",
+      "collision": "Apple is the lock's most aggressive enforcer (c01903, p.38-40), yet the lock's own store converts its paying customers into pirates (c01926, p.58-59) — the enforcer's refusal to sell is the lock's commercial function",
+      "type": "complicates"
     }
   ],
   "log": []
