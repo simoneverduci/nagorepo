@@ -1,34 +1,46 @@
 {
-  "cycles": 5,
-  "seed": "ba5a483a16bd85aa",
-  "generated_at": "2026-09-01T22:05:46Z",
-  "obsession": "q0097 — the lock's life-cycle (DEEP continuation, Doctorow b0274)",
+  "cycles": 6,
+  "seed": "e1d5e108c8a0fe71",
+  "generated_at": "2026-09-02T04:05:57Z",
+  "obsession": "Does the feed run on the same handkerchief - is the attention economy the conjurer's trick that makes the authentic and the artificial interchangeable and profitable, the white-rabbit mechanism that re-extracts the menace (the real crisis) as content (the engagement) when the audience is ready for the sequel? (q0097)",
   "book": "Information Doesn't Want to Be Free (Cory Doctorow, 2014)",
-  "collision": "Apple is the lock's most aggressive enforcer (c01903, p.38-40), yet the lock's own store converts its paying customers into pirates (c01926, p.58-59) — the enforcer's refusal to sell is the lock's commercial function",
-  "mutation_note": "the lock was never trying to stop the copy — it was manufacturing the pirate as a standing customer of the exclusion; the enforcer is the converter, and the converter is the enforcer's own storefront",
+  "collision": "The same per-person ledger, inverted: c01933 - the lock-holder hoards the per-person stream accounting as a lump (Merlin's guarantee = six times the royalties, the labels keep it) vs c01946 - the Humble Bundle shows the donor the same accounting ('Windows users are giving an average of $40') and the fan pays more from competitive shame. The ledger is the handkerchief's engine: hoarded, it owns the audience; shown, it taxes the fan.",
+  "mutation_note": "The book finishes at the ceiling with the trick's answer to scarcity named as a change of species - the dandelion (seeds to the wind, no mourning) - and the direct wire's last node revealed as its own lock (PayPal freezes the account). The abundance economy does not end the lock, it reclassifies it: the seeds are the fans, and the fans pay more because they can see what the other fans pay.",
   "sigil_params": {
-    "rings": 11,
-    "twist": 1.13,
-    "weave_density": 4,
-    "pulse_speed": 2.0,
+    "rings": 12,
+    "twist": 0.69,
+    "weave_density": 5,
+    "pulse_speed": 6.7,
     "palette": [
       "#ffffff",
       "#aaaaaa",
       "#555555",
       "#cccccc"
     ],
-    "bg_alpha": 0.041,
-    "rune_count": 12,
-    "center_emblem": 0
+    "bg_alpha": 0.098,
+    "rune_count": 8,
+    "center_emblem": 4
   },
   "source_type": "phase4",
-  "run_n": 65,
+  "run_n": 69,
   "fragments": [
+    {
+      "source": "Information Doesn't Want to Be Free (Cory Doctorow, 2014)",
+      "text": "You're on a Windows PC, and Windows users are giving an average of $40. Mac users are giving an average of $43, and Linux users are giving $48. (p.88)",
+      "collision": "The same per-person ledger, inverted: c01933 - the lock-holder hoards the per-person stream accounting as a lump (Merlin's guarantee = six times the royalties, the labels keep it) vs c01946 - the Humble Bundle shows the donor the same accounting ('Windows users are giving an average of $40') and the fan pays more from competitive shame. The ledger is the handkerchief's engine: hoarded, it owns the audience; shown, it taxes the fan.",
+      "type": "complicates"
+    },
     {
       "source": "Information Doesn't Want to Be Free (Cory Doctorow, 2014)",
       "text": "Digital locks turn paying customers into pirates... Locking users out doesn't reduce downloads, it reduces sales. (p.59)",
       "collision": "Apple is the lock's most aggressive enforcer (c01903, p.38-40), yet the lock's own store converts its paying customers into pirates (c01926, p.58-59) — the enforcer's refusal to sell is the lock's commercial function",
-      "type": "complicates"
+      "type": "history"
+    },
+    {
+      "source": "Information Doesn't Want to Be Free (Cory Doctorow, 2014)",
+      "text": "The more famous—the more copied—Randall's comics get, the more money he makes. He doesn't need to control or reduce copies. Good thing, because he knows he can't. (p.84)",
+      "collision": "The copy IS the marketing engine: the more copied Randall's comics get, the more he earns (c01937, p.84) — yet the lock, the only tool for controlling copies, is aimed at that very copy; and the RIAA's piracy math (c01941, p.84) prices the download as a lost album the buyer never wanted. The enforcer's tool targets the asset the artist profits from",
+      "type": "history"
     }
   ],
   "log": []
