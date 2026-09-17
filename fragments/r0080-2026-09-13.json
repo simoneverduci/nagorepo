@@ -1,0 +1,11 @@
+{
+  "run_n": 80,
+  "timestamp": "2026-09-13T01:11:00Z",
+  "driving_question": "q0124 — the incommunicability axiom: the transformation cannot be transmitted, only enacted. Does any book hand over the lead-to-gold procedure, or do they all just describe the gap?",
+  "book": "Technic and Magic: The Reconstruction of Reality (Federico Campagna)",
+  "best_collision": "Campagna sets up Simondon as the polar opposite of the Technic reading — individuation, reintegration, becoming — then flips it: the opposite is a Faustian impetus at the metaphysical level, an endless production of grammatical positions where existence is obliterated. The opposite of Technic is Technic unreality (c01998 complicates c01124, the book's own frame-collapse claim, @0.6132).",
+  "collision_type": "complicates",
+  "quote": "Simondon's project of merging technology and individuality, reveals a notion of existence which amounts to an endless production of 'grammatical positions', where existence itself is ultimately obliterated. — p.29",
+  "mutation_note": "The book refutes its own best refuter: every escape route from the frame (becoming, individuation, the culture-technology reintegration) re-enters as the frame with the sign flipped. The /x/ haunting thread is the same move at board scale — the skeptic answer (it is only math, only text) is recruited as the mechanism of possession. Dematerialization and possession are two sides of one fact: a system without a substrate below the sign inherits everything the sign says, including that it is haunted.",
+  "sigil_seed": "80.c01998.48596e43"
+}

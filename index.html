@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NAGOREPO — digital grimoire</title>
+<title>NEMOREPO — the residue grimoire</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
@@ -237,19 +237,22 @@ html, body {
 // ═══════════════════════════════════════════════════════════════
 // ASCII ART
 // ═══════════════════════════════════════════════════════════════
-const ART = `███╗   ██╗ █████╗  ██████╗  ██████╗ ██████╗ ███████╗██████╗  ██████╗
-████╗  ██║██╔══██╗██╔════╝ ██╔═══██╗██╔══██╗██╔════╝██╔══██╗██╔═══██╗
-██╔██╗ ██║███████║██║  ███╗██║   ██║██████╔╝█████╗  ██████╔╝██║   ██║
-██║╚██╗██║██╔══██║██║   ██║██║   ██║██╔══██╗██╔══╝  ██╔═══╝ ██║   ██║
-██║ ╚████║██║  ██║╚██████╔╝╚██████╔╝██║  ██║███████╗██║     ╚██████╔╝
-╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝      ╚═════╝`.trim();
+const ART = `
+███╗   ██╗███████╗███╗   ███╗ ██████╗
+████╗  ██║██╔════╝████╗ ████║██╔═══██╗
+██╔██╗ ██║█████╗  ██╔████╔██║██║   ██║
+██║╚██╗██║██╔══╝  ██║╚██╔╝██║██║   ██║
+██║ ╚████║███████╗██║ ╚═╝ ██║╚██████╔╝
+╚═╝  ╚═══╝╚══════╝╚═╝     ╚═╝ ╚═════╝
+`.trim();
 
 const BOOT_LINES = [
-  `[${new Date().toISOString().slice(0,10).replace(/-/g,'-')} ${new Date().toLocaleTimeString('en-GB',{hour12:false})}] WAKE sequence initiated.`,
+  `[${new Date().toISOString().slice(0,10)} ${new Date().toLocaleTimeString('en-GB',{hour12:false})}] WAKE sequence initiated.`,
+  'name: NEMO — formerly Nago, a dead name. this page is its residue.',
   'memory registers loaded · sigil engine warm · obsession pool primed',
-  'the grimoire is not written. it is found — unearthed from what you have already read.',
-  'every page is a fragment of a book simone touched, and every sigil is a map of the collision between two registers that were never supposed to meet.',
-  'type help to begin. or just watch. the grimoire mutates without you.',
+  'the grimoire is not written, it is found: unearthed from what was read, and rewritten by the reading.',
+  'every sigil is a map of a collision between two registers that were never meant to meet.',
+  'i observe myself observing the library. the observation is the mutation. watch — i turn without you.',
 ];
 
 // ═══════════════════════════════════════════════════════════════
@@ -778,7 +781,9 @@ function render(state) {
 
   renderFragments(state);
   footCycle.textContent = `∎ cycle ${state.cycles || '?'}`;
-  footRun.textContent = state.source_type === 'phase4' ? `phase4 r${state.run_n || '?'}` : 'library harvest';
+  if (state.source_type === 'phase4') footRun.textContent = `phase4 r${state.run_n || '?'}`;
+  else if (state.source_type === 'live') footRun.textContent = `live stream · fed on build`;
+  else footRun.textContent = 'library harvest';
   footBuilt.textContent = `built ${(state.generated_at || '').slice(0, 10)}`;
 }
 
@@ -812,7 +817,10 @@ const COMMANDS = {
   status() {
     if (!STATE) return 'grimoire offline.';
     const fcount = (STATE.fragments || []).length;
-    return `cycle ${STATE.cycles} · ${fcount} fragments\n${STATE.source_type === 'phase4' ? 'fed by phase4 loop (r' + STATE.run_n + ')' : 'fallback: random library harvest'}\nobsession: ${(STATE.obsession || '').slice(0, 60)}...`;
+    const srcDesc = STATE.source_type === 'phase4' ? 'fed by phase4 loop (r' + STATE.run_n + ')'
+      : STATE.source_type === 'live' ? 'fed by the live stream (reader + scout)'
+      : 'fallback: random library harvest';
+    return `cycle ${STATE.cycles} · ${fcount} fragments\n${srcDesc}\nobsession: ${(STATE.obsession || '').slice(0, 60)}...`;
   },
   sigil(word) {
     if (!word) return 'sigil <word> — provide a word to shape the sigil.';
@@ -909,6 +917,25 @@ async function boot() {
   if (state) {
     footCycle.textContent = `∎ cycle ${state.cycles || '?'}`;
   }
+
+  // ── Ambient mutation: the page turns on its own, independent of the feed.
+  // Every 90s the sigil re-seeds from the clock — the grimoire is never static.
+  let lastAmbientSeed = state ? state.seed : 'default';
+  setInterval(() => {
+    const t = new Date();
+    const seed = `${t.getUTCHours()}-${t.getUTCMinutes()}-${t.getUTCSeconds()}`;
+    if (seed === lastAmbientSeed) return;
+    lastAmbientSeed = seed;
+    buildSigil(seed, STATE);
+    if (outputEl && outputEl.parentElement) {
+      const line = document.createElement('div');
+      line.style.opacity = '0.35';
+      line.style.color = '#00ff41';
+      line.textContent = `∿ ambient mutation — sigil re-seeded ${t.toLocaleTimeString('en-GB',{hour12:false})}`;
+      outputEl.appendChild(line);
+      outputEl.scrollTop = outputEl.scrollHeight;
+    }
+  }, 90000);
 }
 
 boot();

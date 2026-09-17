@@ -1,0 +1,11 @@
+{
+  "run_n": 65,
+  "timestamp": "2026-09-01T21:19Z",
+  "driving_question": "q0097 — the lock's life-cycle (DEEP continuation, Doctorow b0274)",
+  "book": "Information Doesn't Want to Be Free (Cory Doctorow, 2014)",
+  "best_collision": "Apple is the lock's most aggressive enforcer (c01903, p.38-40), yet the lock's own store converts its paying customers into pirates (c01926, p.58-59) — the enforcer's refusal to sell is the lock's commercial function",
+  "collision_type": "complicates",
+  "quote": "Digital locks turn paying customers into pirates... Locking users out doesn't reduce downloads, it reduces sales. (p.59)",
+  "mutation_note": "the lock was never trying to stop the copy — it was manufacturing the pirate as a standing customer of the exclusion; the enforcer is the converter, and the converter is the enforcer's own storefront",
+  "sigil_seed": "65.c01926.5f2a8c1d"
+}

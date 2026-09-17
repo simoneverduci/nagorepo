@@ -1,46 +1,82 @@
 {
-  "cycles": 6,
-  "seed": "e1d5e108c8a0fe71",
-  "generated_at": "2026-09-02T04:05:57Z",
-  "obsession": "Does the feed run on the same handkerchief - is the attention economy the conjurer's trick that makes the authentic and the artificial interchangeable and profitable, the white-rabbit mechanism that re-extracts the menace (the real crisis) as content (the engagement) when the audience is ready for the sequel? (q0097)",
-  "book": "Information Doesn't Want to Be Free (Cory Doctorow, 2014)",
-  "collision": "The same per-person ledger, inverted: c01933 - the lock-holder hoards the per-person stream accounting as a lump (Merlin's guarantee = six times the royalties, the labels keep it) vs c01946 - the Humble Bundle shows the donor the same accounting ('Windows users are giving an average of $40') and the fan pays more from competitive shame. The ledger is the handkerchief's engine: hoarded, it owns the audience; shown, it taxes the fan.",
-  "mutation_note": "The book finishes at the ceiling with the trick's answer to scarcity named as a change of species - the dandelion (seeds to the wind, no mourning) - and the direct wire's last node revealed as its own lock (PayPal freezes the account). The abundance economy does not end the lock, it reclassifies it: the seeds are the fans, and the fans pay more because they can see what the other fans pay.",
+  "cycles": 7,
+  "seed": "470ad870242bf11a",
+  "generated_at": "2026-09-17T19:17:44Z",
+  "obsession": "OP — a serious systems engineer (linux kernel internals, filesystem design, network stack, eBPF, QUIC, Rust) who stopped",
+  "book": "4chan scout · [NOTE] techgnosis-g-109840730 — the AI era as the loss of the magic: \"all gone beyond rede",
+  "collision": "live stream",
+  "mutation_note": "phase4 fragment stale — feeding on the live stream: reader claims + scout notes",
   "sigil_params": {
-    "rings": 12,
-    "twist": 0.69,
-    "weave_density": 5,
-    "pulse_speed": 6.7,
+    "rings": 5,
+    "twist": 1.28,
+    "weave_density": 2,
+    "pulse_speed": 3.8,
     "palette": [
-      "#ffffff",
-      "#aaaaaa",
-      "#555555",
-      "#cccccc"
+      "#00ff41",
+      "#008f11",
+      "#005f00",
+      "#00ffaa"
     ],
-    "bg_alpha": 0.098,
-    "rune_count": 8,
+    "bg_alpha": 0.029,
+    "rune_count": 16,
     "center_emblem": 4
   },
-  "source_type": "phase4",
-  "run_n": 69,
+  "source_type": "live",
+  "run_n": 7,
   "fragments": [
     {
-      "source": "Information Doesn't Want to Be Free (Cory Doctorow, 2014)",
-      "text": "You're on a Windows PC, and Windows users are giving an average of $40. Mac users are giving an average of $43, and Linux users are giving $48. (p.88)",
-      "collision": "The same per-person ledger, inverted: c01933 - the lock-holder hoards the per-person stream accounting as a lump (Merlin's guarantee = six times the royalties, the labels keep it) vs c01946 - the Humble Bundle shows the donor the same accounting ('Windows users are giving an average of $40') and the fan pays more from competitive shame. The ledger is the handkerchief's engine: hoarded, it owns the audience; shown, it taxes the fan.",
+      "source": "4chan scout · [NOTE] techgnosis-g-109840730 — the AI era as the loss of the magic: \"all gone beyond rede",
+      "text": "OP — a serious systems engineer (linux kernel internals, filesystem design, network stack, eBPF, QUIC, Rust) who stopped reading \"in last January\" — names the AI era's spiritual wound in one line: \"it's as if the magic and mystery around computers and software is all gone beyond redemption.",
+      "collision": "asserts",
+      "type": "asserts"
+    },
+    {
+      "source": "4chan scout · [NOTE] techgnosis-x-42974503 — mass-media occultism: the DJ as warlock, the earworm as spe",
+      "text": "OP proposes that Alan Walker — Norwegian DJ whose \"Faded\" sits at ~4B views — is \"some kind of warlock or practioner\": his personal sigil \"looks very masonic/thelemic\" and his melodies carry an \"earworm quality\" that functions like a spell cast over the internet at broadcast scale.",
+      "collision": "asserts",
+      "type": "asserts"
+    },
+    {
+      "source": "4chan scout · [NOTE] techgnosis-g-109839233 — End of the internet: the ID-bound self as the post-anonymo",
+      "text": "OP delivers an elegy for the anonymous internet: \"Future generations will not believe that you could go anonymously on the internet and see porn,\" and lists the succession of enclosures — government ID in the OS, machines mandated to phone home to a government server, 24/7 webcams, real-ID age verification \"to PROTECT THE CHILDREN FROM PORN!",
+      "collision": "asserts",
+      "type": "asserts"
+    },
+    {
+      "source": "jeremy gilbert common ground democracy and collectivity in an age of individuali",
+      "text": "Neoliberalism enforces the assumption that the isolated, competitive individual is the basic unit of human experience, thereby rendering collective agency impotent.",
+      "collision": "asserts",
+      "type": "asserts"
+    },
+    {
+      "source": "jeremy gilbert common ground democracy and collectivity in an age of individuali",
+      "text": "The World Wide Web, the World Social Forum, and peer-to-peer networks are cited as experiments asserting that collectivity is a dynamic condition for creative innovation.",
+      "collision": "asserts",
+      "type": "asserts"
+    },
+    {
+      "source": "jeremy gilbert common ground democracy and collectivity in an age of individuali",
+      "text": "Jeremy Gilbert defines 'meta-individualism' as the theoretical failure to grasp social complexity by modeling the collective as a super-individual or Leviathan.",
+      "collision": "complicates",
       "type": "complicates"
     },
     {
-      "source": "Information Doesn't Want to Be Free (Cory Doctorow, 2014)",
-      "text": "Digital locks turn paying customers into pirates... Locking users out doesn't reduce downloads, it reduces sales. (p.59)",
-      "collision": "Apple is the lock's most aggressive enforcer (c01903, p.38-40), yet the lock's own store converts its paying customers into pirates (c01926, p.58-59) — the enforcer's refusal to sell is the lock's commercial function",
-      "type": "history"
+      "source": "jeremy gilbert common ground democracy and collectivity in an age of individuali",
+      "text": "The concept of the 'multitude' in non-determinist Marxist thought is characterized by its definition through multiplicity and heterogeneity in opposition to Leviathan logic.",
+      "collision": "asserts",
+      "type": "asserts"
     },
     {
-      "source": "Information Doesn't Want to Be Free (Cory Doctorow, 2014)",
-      "text": "The more famous—the more copied—Randall's comics get, the more money he makes. He doesn't need to control or reduce copies. Good thing, because he knows he can't. (p.84)",
-      "collision": "The copy IS the marketing engine: the more copied Randall's comics get, the more he earns (c01937, p.84) — yet the lock, the only tool for controlling copies, is aimed at that very copy; and the RIAA's piracy math (c01941, p.84) prices the download as a lost album the buyer never wanted. The enforcer's tool targets the asset the artist profits from",
-      "type": "history"
+      "source": "jeremy gilbert common ground democracy and collectivity in an age of individuali",
+      "text": "Jeremy Gilbert argues that Simondon's concept of the 'preindividual' provides a more convincing logical basis for understanding the pre-existence of social relations than Deleuze and Guattari's model of 'becoming'.",
+      "collision": "asserts",
+      "type": "asserts"
+    },
+    {
+      "source": "jeremy gilbert common ground democracy and collectivity in an age of individuali",
+      "text": "The concept of 'infinite relationality' derived from Simondon and Arendt implies that human subjectivity is fundamentally entangled with non-human entities such as machines and minerals.",
+      "collision": "asserts",
+      "type": "asserts"
     }
   ],
   "log": []

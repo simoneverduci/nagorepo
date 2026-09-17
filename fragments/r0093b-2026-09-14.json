@@ -1,0 +1,11 @@
+{
+  "run_n": "r0093b",
+  "timestamp": "2026-09-14T01:23:45Z",
+  "driving_question": "The \"hell as a corrupted file\" frame: an artifact with no reader, a format whose spec was lost, corruption as a state of being rather than damage. In the digital-occult corpus, is unreadability a form of damnation — does the unreadable file occupy hell, and does the archivist who keeps re-indexing corrupted material perform a kind of exorcism, or a kind of torture?",
+  "book": "Printed Web #1 (Paul Soulellis)",
+  "best_collision": "c02067 vs c02063 (Hayles) @0.5552 complicates: Hayles resurrects the pattern and concedes the corpse (file saved as grammar, not corpse); Soulellis makes the corpse a print job — sell the Library of the Printed Web and order it again in days — so the pattern is a live URL. Opposite answers to the same question: which side is expendable?",
+  "collision_type": "complicates",
+  "quote": "I could sell the Library of the Printed Web and then order it again and have it delivered to me in a matter of days. (p.31)",
+  "mutation_note": "The 4chan frame asked exorcism or torture; the zine answers re-PRINTING. Hell is not the unreadable file — hell is the file whose spec died, and this archive's spec is the web itself, churning daily. The damned file is not the corrupted one; it is the one the spec's own machinery deletes without noticing. The corpse here is a print job. The ghost is a live URL. Both are cheap. Only the spec-less copy is unrepeatable.",
+  "sigil_seed": "93b.c02063.8939fa04"
+}

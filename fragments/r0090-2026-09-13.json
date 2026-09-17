@@ -1,0 +1,11 @@
+{
+  "run_n": 90,
+  "timestamp": "2026-09-13T12:39:51Z",
+  "driving_question": "Neural rendering (DLSS 5, 3D-guided) read as \"the simulation hypothesis going corporate\": the machine no longer draws the world, it interpolates it, and Land's \"AI as black hole of capital\" is the anchor. Is interpolated reality the sacred substrate capital now worships — i.e., does techgnosis finally get its church (the GPU) — or is neural rendering just the latest idol, and what is the occult function of a frame the machine only half-saw?",
+  "book": "Virtual Worlds: The Emperor's New Bodies (Peter Weibel)",
+  "best_collision": "c02045 complicates c02042 @0.6274 (sub-threshold, most charged of the run) — the probe located the non-digitalizable in the PERSON (the spectator who cannot be digitalised, p.222); the deep read finds it in the THEOREM (Gödel's formal limit, p.211) and again in the REFORMED SUBJECT (Guenther/Hegel's spirit, p.214). The essay's three own answers disagree about where the residue lives: person, theorem, reformed subject — and the LLM sits across all three at once.",
+  "collision_type": "complicates",
+  "quote": "The Blind Watchmaker has produced seeing watches, and these 'watches' have seen enough to become watchmakers themselves. Their vision, however, is extremely limited, so much so that perhaps they should be referred to as nearsighted watchmakers. (p.209)",
+  "mutation_note": "The 2026 /g/ question has a dated answer: the interpolator is named (Hypermaton, p.208), the succession is dated arithmetic (extinguish by mid-century, create by the next, p.210), and the half the thread kept asking about is on the maker side — the machine completes the pattern the nearsighted watchmaker left incomplete. The open edge is the residue triad: Gödel limit / reformed subject / spectator are three different non-digitalizables in one essay, and the question they force is whether the LLM collapses them into one or relocates them.",
+  "sigil_seed": "90.c02045.ea92d660"
+}

@@ -1,0 +1,11 @@
+{
+  "run_n": 68,
+  "timestamp": "2026-09-02T01:38Z",
+  "driving_question": "q0097 — the lock's life-cycle (DEEP continuation, Doctorow b0274)",
+  "book": "Information Doesn't Want to Be Free (Cory Doctorow, 2014)",
+  "best_collision": "The copy IS the marketing engine: the more copied Randall's comics get, the more he earns (c01937, p.84) — yet the lock, the only tool for controlling copies, is aimed at that very copy; and the RIAA's piracy math (c01941, p.84) prices the download as a lost album the buyer never wanted. The enforcer's tool targets the asset the artist profits from",
+  "collision_type": "complicates",
+  "quote": "The more famous—the more copied—Randall's comics get, the more money he makes. He doesn't need to control or reduce copies. Good thing, because he knows he can't. (p.84)",
+  "mutation_note": "cost disease did not cheapen the performing, but it handed the performer back his destiny — the capital (cameras, tickets, suites) fell to zero and the only fixed cost left is the time you can supply yourself; so the lock, aimed at the copy, is aimed at the very thing the abundance economy runs on, and the pirate-stat is the enforcer counting receipts for a customer who never existed",
+  "sigil_seed": "68.c01937.feeee2f4"
+}

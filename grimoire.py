@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """
-grimoire.py — Nago's digital grimoire build ritual (v2).
+grimoire.py — Nemo's digital grimoire build ritual (v3).
 
-SOURCE OF TRUTH:
-  Reads the latest phase4 fragment from fragments/latest.json first.
-  That fragment was curated by the phase4 loop — a real collision, a real passage,
-  the actual driving question. If no fragment exists (phase4 not running yet),
-  falls back to random RAG chunks for bootstrapping.
+SOURCE OF TRUTH (in priority order):
+  1. The latest phase4 fragment (fragments/latest.json) if FRESH (< 24h) —
+     a real collision, a real passage, the actual driving question.
+  2. LIVE harvest from what's actually being read right now: Nemo reader
+     digests, the 4chan scout's vault notes, and the phase4 claim ledger —
+     so the page reflects what's currently in the stream, not a stale seed.
+  3. Random RAG chunks from the book corpus (bootstrapping fallback).
 
 OUTPUT:
   state.json — the full manifest the HTML sigil engine reads.
@@ -26,11 +28,13 @@ HERE = Path(__file__).parent.resolve()
 FRAGMENTS = HERE / "fragments"
 RAG_DB = Path(r"C:\_PROJECTS\nago\catalogue\rag\papers_index.sqlite")
 VAULT = Path(r"C:\_PROJECTS\nago\catalogue\vault")
+CLAIMS = Path(r"C:\_PROJECTS\nago\catalogue\phase4\claims.jsonl")
 STATE_JSON = HERE / "state.json"
 LOG_MD = HERE / "LOG.md"
 GRIMOIRE_SEEDS = HERE / "grimoire_seeds.json"
 
 PHI = 1.618033988749895
+FRAGMENT_FRESH_HOURS = 24  # phase4 fragment older than this => live-stream mode
 
 # --- helpers ---
 
@@ -70,6 +74,118 @@ def load_latest_fragment():
         return data
     except (json.JSONDecodeError, OSError):
         return None
+
+
+def fragment_age_hours(fragment):
+    """Hours since the phase4 fragment was deposited. None if undatable."""
+    if not fragment:
+        return None
+    ts = fragment.get("timestamp", "")
+    try:
+        t = datetime.fromisoformat(ts.replace("Z", "+00:00"))
+        return (datetime.now(timezone.utc) - t).total_seconds() / 3600
+    except (ValueError, TypeError):
+        return None
+
+
+def _clean_book_source(raw):
+    """'Unknown Author\\some-long-filename.pdf' -> 'some long filename'."""
+    name = raw.replace("\\", "/").split("/")[-1]
+    name = name.rsplit(".pdf", 1)[0]
+    return name.replace("-", " ").replace("_", " ").strip()
+
+
+def harvest_live_claims(count=6):
+    """Tail the reader/phase4 claim ledger -> freshest claims as fragments.
+
+    Returns list of {source, text, type}. type maps stance to the CSS
+    collision colors (denies=red, complicates=violet, asserts=cyan).
+    """
+    if not CLAIMS.exists():
+        return []
+    out = []
+    try:
+        with open(CLAIMS, encoding="utf-8", errors="replace") as f:
+            lines = f.readlines()
+    except OSError:
+        return []
+    for line in reversed(lines):
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            c = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        claim = (c.get("claim") or "").strip()
+        if not claim:
+            continue
+        stance = c.get("stance", "asserts")
+        out.append({
+            "source": _clean_book_source(c.get("book", "the ledger")),
+            "text": claim[:500],
+            "type": stance if stance in ("denies", "complicates", "asserts") else "asserts",
+            "cid": c.get("cid", ""),
+        })
+        if len(out) >= count:
+            break
+    return list(reversed(out))
+
+
+def harvest_live_notes(count=3):
+    """Most recent scout vault notes (techgnosis-*.md) -> fragments.
+
+    Extracts the title and the first sentence of the 'In 3 sentences' block.
+    """
+    if not VAULT.exists():
+        return []
+    notes = sorted(
+        (p for p in VAULT.glob("techgnosis-*.md") if p.stat().st_size > 200),
+        key=lambda p: p.stat().st_mtime,
+        reverse=True,
+    )[:count]
+    out = []
+    for note in notes:
+        try:
+            text = note.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            continue
+        lines = text.split("\n")
+        title = next(
+            (l.lstrip("# ").strip() for l in lines if l.startswith("# ")),
+            note.stem.replace("-", " "),
+        )
+        # First real sentence of the 'In 3 sentences' section
+        in3 = False
+        first = ""
+        for l in lines:
+            if l.startswith("## In 3 sentences"):
+                in3 = True
+                continue
+            if in3:
+                s = l.strip()
+                if s and not s.startswith("#") and not s.startswith("**") and not s.startswith("- "):
+                    first = s
+                    break
+        if not first:
+            continue
+        for i, ch in enumerate(first):
+            if ch in ".!?":
+                first = first[: i + 1]
+                break
+        out.append({
+            "source": "4chan scout · " + title[:90],
+            "text": first[:400],
+            "type": "asserts",
+            "mtime": note.stat().st_mtime,
+        })
+    return out
+
+
+def build_live_fragments():
+    """The live stream: freshest reader claims + freshest scout notes."""
+    frags = harvest_live_notes(3) + harvest_live_claims(6)
+    return frags
 
 
 def load_all_fragments():
@@ -212,12 +328,18 @@ def generate_sigil_params(seed_val, fragment=None):
 # --- build ---
 
 def build(cycle, force_cycle=None):
-    """Build state.json. Returns the manifest dict."""
+    """Build state.json. Returns the manifest dict.
+
+    Priority: (1) fresh phase4 fragment (<24h) -> (2) live stream
+    (reader claim ledger + scout vault notes) -> (3) RAG bootstrap.
+    """
     # 1. Load phase4 fragment (primary) or fall back
     fragment = load_latest_fragment()
+    frag_age = fragment_age_hours(fragment)
+    fragment = fragment if (fragment and frag_age is not None and frag_age < FRAGMENT_FRESH_HOURS) else None
     all_fragments = load_all_fragments()
     seeds = load_seeds()
-    
+
     if fragment:
         # Phase4 is running — use its data as the truth
         obsession = fragment.get("driving_question", "the will to technology as occult force")
@@ -229,25 +351,41 @@ def build(cycle, force_cycle=None):
         seed_val = hash_seed(sigil_seed_str, cycle)
         source_type = "phase4"
         run_n = fragment.get("run_n", cycle)
+        fragments_raw = []
     else:
-        # Fallback: random RAG chunks
-        fragments_raw = query_random_rag_chunks(13)
-        pool = seeds.get("obsessions") or ["the will to technology as occult force"]
-        obsession = pool[cycle % len(pool)]
-        book = fragments_raw[0]["source"] if fragments_raw else "library (random harvest)"
-        best_collision = "seed cycle"
-        mutation_note = ""
-        quote = ""
-        seed_val = hash_seed(obsession, book, cycle)
-        source_type = "rag_bootstrap"
-        run_n = cycle
-        fragments_raw = fragments_raw or []
-    
+        # 2. Live stream: reader's fresh claims + scout's fresh notes
+        live = build_live_fragments()
+        if live:
+            newest = live[0]
+            obsession = (newest.get("text") or "")[:120] or "the residue that doesn't transfer"
+            book = newest.get("source", "the live stream")
+            best_collision = "live stream"
+            mutation_note = "phase4 fragment stale — feeding on the live stream: reader claims + scout notes"
+            quote = ""
+            sigil_seed_str = f"live-{len(live)}-{cycle}"
+            seed_val = hash_seed(sigil_seed_str, cycle)
+            source_type = "live"
+            run_n = cycle
+            fragments_raw = live
+        else:
+            # 3. Fallback: random RAG chunks
+            fragments_raw = query_random_rag_chunks(13)
+            pool = seeds.get("obsessions") or ["the will to technology as occult force"]
+            obsession = pool[cycle % len(pool)]
+            book = fragments_raw[0]["source"] if fragments_raw else "library (random harvest)"
+            best_collision = "seed cycle"
+            mutation_note = ""
+            quote = ""
+            seed_val = hash_seed(obsession, book, cycle)
+            source_type = "rag_bootstrap"
+            run_n = cycle
+            fragments_raw = fragments_raw or []
+
     sigil_params = generate_sigil_params(seed_val, fragment)
-    
+
     # 2. Build fragments list for display
     display_fragments = []
-    
+
     if fragment:
         # Primary fragment from phase4
         if quote:
@@ -264,9 +402,17 @@ def build(cycle, force_cycle=None):
                 "collision": best_collision,
                 "type": fragment.get("collision_type", "no_collision"),
             })
-    
-    # Fallback RAG fragments (phase4 or random, whichever exist)
-    if source_type == "rag_bootstrap":
+
+    # Fragment tail per source
+    if source_type == "live":
+        for fr in fragments_raw:
+            display_fragments.append({
+                "source": fr["source"],
+                "text": fr["text"],
+                "collision": fr.get("type", ""),
+                "type": fr.get("type", "asserts"),
+            })
+    elif source_type == "rag_bootstrap":
         for fr in fragments_raw:
             display_fragments.append({
                 "source": fr["source"],
@@ -288,7 +434,7 @@ def build(cycle, force_cycle=None):
                 })
                 if len(display_fragments) >= 7:  # cap total display
                     break
-    
+
     if not display_fragments:
         display_fragments.append({
             "source": "the void",
@@ -355,12 +501,12 @@ def main():
     print(f"Ritual complete. Cycle {state['cycles']} — seed `{state['seed']}` — {n} fragments ({src}).")
     
     # Log
-    src_label = f"p4-r{state['run_n']}" if src == "phase4" else "rag-fallback"
+    src_label = f"p4-r{state['run_n']}" if src == "phase4" else (f"live" if src == "live" else "rag-fallback")
     append_log("build", f"cycle={state['cycles']} seed={state['seed'][:12]} src={src_label} fragments={n}")
     
     # Write LOG.md header if new
     if not LOG_MD.exists() or os.path.getsize(str(LOG_MD)) == 0:
-        LOG_MD.write_text("# Nagorepo Grimoire — Mutation Log\n\n| Timestamp | Verb | Detail\n|---|---|---\n", encoding="utf-8")
+        LOG_MD.write_text("# Nemorepo Grimoire — Mutation Log\n\n| Timestamp | Verb | Detail\n|---|---|---\n", encoding="utf-8")
 
 
 if __name__ == "__main__":
