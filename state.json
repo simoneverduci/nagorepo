@@ -1,82 +1,64 @@
 {
-  "cycles": 7,
-  "seed": "470ad870242bf11a",
-  "generated_at": "2026-09-17T19:17:44Z",
-  "obsession": "OP — a serious systems engineer (linux kernel internals, filesystem design, network stack, eBPF, QUIC, Rust) who stopped",
-  "book": "4chan scout · [NOTE] techgnosis-g-109840730 — the AI era as the loss of the magic: \"all gone beyond rede",
+  "cycles": 8,
+  "seed": "6a965a5d7c0d4b93",
+  "generated_at": "2026-09-18T01:33:08Z",
+  "obsession": "Ted Nelson asserts that all intellectual structures and hierarchies are arbitrary accidents, contrasting with Engelbart ",
+  "book": "computer lib dream machines",
   "collision": "live stream",
   "mutation_note": "phase4 fragment stale — feeding on the live stream: reader claims + scout notes",
   "sigil_params": {
-    "rings": 5,
-    "twist": 1.28,
-    "weave_density": 2,
-    "pulse_speed": 3.8,
+    "rings": 4,
+    "twist": 1.47,
+    "weave_density": 3,
+    "pulse_speed": 2.1,
     "palette": [
-      "#00ff41",
-      "#008f11",
-      "#005f00",
-      "#00ffaa"
+      "#ff00ff",
+      "#cc00cc",
+      "#880088",
+      "#ff44ff"
     ],
-    "bg_alpha": 0.029,
-    "rune_count": 16,
-    "center_emblem": 4
+    "bg_alpha": 0.098,
+    "rune_count": 8,
+    "center_emblem": 1
   },
   "source_type": "live",
-  "run_n": 7,
+  "run_n": 8,
   "fragments": [
     {
-      "source": "4chan scout · [NOTE] techgnosis-g-109840730 — the AI era as the loss of the magic: \"all gone beyond rede",
-      "text": "OP — a serious systems engineer (linux kernel internals, filesystem design, network stack, eBPF, QUIC, Rust) who stopped reading \"in last January\" — names the AI era's spiritual wound in one line: \"it's as if the magic and mystery around computers and software is all gone beyond redemption.",
+      "source": "computer lib dream machines",
+      "text": "Ted Nelson asserts that all intellectual structures and hierarchies are arbitrary accidents, contrasting with Engelbart and Pask who assumed natural hierarchies in subjects should be accentuated.",
       "collision": "asserts",
       "type": "asserts"
     },
     {
-      "source": "4chan scout · [NOTE] techgnosis-x-42974503 — mass-media occultism: the DJ as warlock, the earworm as spe",
-      "text": "OP proposes that Alan Walker — Norwegian DJ whose \"Faded\" sits at ~4B views — is \"some kind of warlock or practioner\": his personal sigil \"looks very masonic/thelemic\" and his melodies carry an \"earworm quality\" that functions like a spell cast over the internet at broadcast scale.",
+      "source": "computer lib dream machines",
+      "text": "Ted Nelson defines Computer Lib as the project of making people freer through computers.",
       "collision": "asserts",
       "type": "asserts"
     },
     {
-      "source": "4chan scout · [NOTE] techgnosis-g-109839233 — End of the internet: the ID-bound self as the post-anonymo",
-      "text": "OP delivers an elegy for the anonymous internet: \"Future generations will not believe that you could go anonymously on the internet and see porn,\" and lists the succession of enclosures — government ID in the OS, machines mandated to phone home to a government server, 24/7 webcams, real-ID age verification \"to PROTECT THE CHILDREN FROM PORN!",
+      "source": "computer lib dream machines",
+      "text": "IBM's adoption of EBCDIC was primarily a strategic move to render the 360 system incompatible with other systems and terminals.",
       "collision": "asserts",
       "type": "asserts"
     },
     {
-      "source": "jeremy gilbert common ground democracy and collectivity in an age of individuali",
-      "text": "Neoliberalism enforces the assumption that the isolated, competitive individual is the basic unit of human experience, thereby rendering collective agency impotent.",
+      "source": "computer lib dream machines",
+      "text": "IBM holds a near-monopoly position in the computer field, selling 65 to 70 percent of all computers and programs, which allows it to define the technology for the general public.",
       "collision": "asserts",
       "type": "asserts"
     },
     {
-      "source": "jeremy gilbert common ground democracy and collectivity in an age of individuali",
-      "text": "The World Wide Web, the World Social Forum, and peer-to-peer networks are cited as experiments asserting that collectivity is a dynamic condition for creative innovation.",
-      "collision": "asserts",
-      "type": "asserts"
-    },
-    {
-      "source": "jeremy gilbert common ground democracy and collectivity in an age of individuali",
-      "text": "Jeremy Gilbert defines 'meta-individualism' as the theoretical failure to grasp social complexity by modeling the collective as a super-individual or Leviathan.",
+      "source": "computer lib dream machines",
+      "text": "Ted Nelson argues that the 'inverted file' is a misnomer that exposes the computer industry's pathological attachment to linear sequence.",
       "collision": "complicates",
       "type": "complicates"
     },
     {
-      "source": "jeremy gilbert common ground democracy and collectivity in an age of individuali",
-      "text": "The concept of the 'multitude' in non-determinist Marxist thought is characterized by its definition through multiplicity and heterogeneity in opposition to Leviathan logic.",
-      "collision": "asserts",
-      "type": "asserts"
-    },
-    {
-      "source": "jeremy gilbert common ground democracy and collectivity in an age of individuali",
-      "text": "Jeremy Gilbert argues that Simondon's concept of the 'preindividual' provides a more convincing logical basis for understanding the pre-existence of social relations than Deleuze and Guattari's model of 'becoming'.",
-      "collision": "asserts",
-      "type": "asserts"
-    },
-    {
-      "source": "jeremy gilbert common ground democracy and collectivity in an age of individuali",
-      "text": "The concept of 'infinite relationality' derived from Simondon and Arendt implies that human subjectivity is fundamentally entangled with non-human entities such as machines and minerals.",
-      "collision": "asserts",
-      "type": "asserts"
+      "source": "computer lib dream machines",
+      "text": "Ted Nelson asserts that the computer is used as a General Scapegoat to cover up human decisions that are made for convenience rather than technical necessity.",
+      "collision": "complicates",
+      "type": "complicates"
     }
   ],
   "log": []
