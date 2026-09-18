@@ -1,64 +1,64 @@
 {
-  "cycles": 9,
-  "seed": "e8e7344b194e3102",
-  "generated_at": "2026-09-18T07:33:19Z",
-  "obsession": "Finance’s speculative forces are key levers in the constitution of modern imagined communities, molding collective myths",
-  "book": "Speculative Communities  Living with Uncertainty in a Financialized World",
+  "cycles": 10,
+  "seed": "1405438e197d93d7",
+  "generated_at": "2026-09-18T13:33:33Z",
+  "obsession": "The Feraferia movement, founded in California in the 1960s, banned technology from its pagan practice.",
+  "book": "Microsoft Word   L&A 19 2.doc",
   "collision": "live stream",
   "mutation_note": "phase4 fragment stale — feeding on the live stream: reader claims + scout notes",
   "sigil_params": {
-    "rings": 5,
-    "twist": 0.93,
-    "weave_density": 3,
-    "pulse_speed": 4.6,
+    "rings": 4,
+    "twist": 0.48,
+    "weave_density": 1,
+    "pulse_speed": 5.9,
     "palette": [
-      "#8844ff",
-      "#6633cc",
-      "#442288",
-      "#aa66ff"
+      "#ff0044",
+      "#cc0033",
+      "#880022",
+      "#ff4477"
     ],
-    "bg_alpha": 0.036,
-    "rune_count": 16,
+    "bg_alpha": 0.045,
+    "rune_count": 10,
     "center_emblem": 1
   },
   "source_type": "live",
-  "run_n": 9,
+  "run_n": 10,
   "fragments": [
     {
-      "source": "Speculative Communities  Living with Uncertainty in a Financialized World",
-      "text": "Finance’s speculative forces are key levers in the constitution of modern imagined communities, molding collective myths and eliciting anxieties.",
-      "collision": "complicates",
-      "type": "complicates"
-    },
-    {
-      "source": "Speculative Communities  Living with Uncertainty in a Financialized World",
-      "text": "To speculate increasingly means to connect and to endorse uncertainty preemptively as a means of social survival.",
+      "source": "Microsoft Word   L&A 19 2.doc",
+      "text": "The Feraferia movement, founded in California in the 1960s, banned technology from its pagan practice.",
       "collision": "asserts",
       "type": "asserts"
     },
     {
-      "source": "Speculative Communities  Living with Uncertainty in a Financialized World",
-      "text": "The *homo speculans* succeeds the *homo economicus* by accepting the future's radical uncertainty rather than attempting to avert it through rational calculation.",
+      "source": "Microsoft Word   L&A 19 2.doc",
+      "text": "The salutation 'Thou art God' originates from Robert A. Heinlein's 1961 novel Stranger in a Strange Land and is used by some Witches to acknowledge their own divinity.",
       "collision": "asserts",
       "type": "asserts"
     },
     {
-      "source": "Speculative Communities  Living with Uncertainty in a Financialized World",
-      "text": "Financialization drives the historical shift from a rationality-driven subject to an imagination-fueled subject, a transition that is neither a rupture nor a serialized shift.",
-      "collision": "complicates",
-      "type": "complicates"
+      "source": "Microsoft Word   L&A 19 2.doc",
+      "text": "Andrew Siliar asserts that the computer revolution and online links are incompatible with the requirements of a Nature Religion.",
+      "collision": "denies",
+      "type": "denies"
     },
     {
-      "source": "Speculative Communities  Living with Uncertainty in a Financialized World",
-      "text": "The history of modern credit practices is inextricably bound to the violent histories of European state formation, colonial conquest, and slave trading.",
-      "collision": "complicates",
-      "type": "complicates"
+      "source": "Microsoft Word   L&A 19 2.doc",
+      "text": "Isaac Bonewits describes human beings as functioning like radio stations that broadcast and receive wavelengths of magical energy.",
+      "collision": "denies",
+      "type": "denies"
     },
     {
-      "source": "Speculative Communities  Living with Uncertainty in a Financialized World",
-      "text": "Homo economicus is a gendered, masculine figure that excludes the pathologies and vulnerabilities historically associated with women.",
-      "collision": "complicates",
-      "type": "complicates"
+      "source": "Microsoft Word   L&A 19 2.doc",
+      "text": "The Wiccan ritual circle acts as a liminal threshold that designates a sacred space for the separation and consecration of the practitioner from the mundane world.",
+      "collision": "asserts",
+      "type": "asserts"
+    },
+    {
+      "source": "Microsoft Word   L&A 19 2.doc",
+      "text": "Erik Davis introduced the term 'Technopagan' to describe the integration of magic and information technology, challenging the view that the two are mutually exclusive.",
+      "collision": "asserts",
+      "type": "asserts"
     }
   ],
   "log": []
