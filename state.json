@@ -1,62 +1,62 @@
 {
-  "cycles": 8,
-  "seed": "6a965a5d7c0d4b93",
-  "generated_at": "2026-09-18T01:33:08Z",
-  "obsession": "Ted Nelson asserts that all intellectual structures and hierarchies are arbitrary accidents, contrasting with Engelbart ",
-  "book": "computer lib dream machines",
+  "cycles": 9,
+  "seed": "e8e7344b194e3102",
+  "generated_at": "2026-09-18T07:33:19Z",
+  "obsession": "Finance’s speculative forces are key levers in the constitution of modern imagined communities, molding collective myths",
+  "book": "Speculative Communities  Living with Uncertainty in a Financialized World",
   "collision": "live stream",
   "mutation_note": "phase4 fragment stale — feeding on the live stream: reader claims + scout notes",
   "sigil_params": {
-    "rings": 4,
-    "twist": 1.47,
+    "rings": 5,
+    "twist": 0.93,
     "weave_density": 3,
-    "pulse_speed": 2.1,
+    "pulse_speed": 4.6,
     "palette": [
-      "#ff00ff",
-      "#cc00cc",
-      "#880088",
-      "#ff44ff"
+      "#8844ff",
+      "#6633cc",
+      "#442288",
+      "#aa66ff"
     ],
-    "bg_alpha": 0.098,
-    "rune_count": 8,
+    "bg_alpha": 0.036,
+    "rune_count": 16,
     "center_emblem": 1
   },
   "source_type": "live",
-  "run_n": 8,
+  "run_n": 9,
   "fragments": [
     {
-      "source": "computer lib dream machines",
-      "text": "Ted Nelson asserts that all intellectual structures and hierarchies are arbitrary accidents, contrasting with Engelbart and Pask who assumed natural hierarchies in subjects should be accentuated.",
-      "collision": "asserts",
-      "type": "asserts"
-    },
-    {
-      "source": "computer lib dream machines",
-      "text": "Ted Nelson defines Computer Lib as the project of making people freer through computers.",
-      "collision": "asserts",
-      "type": "asserts"
-    },
-    {
-      "source": "computer lib dream machines",
-      "text": "IBM's adoption of EBCDIC was primarily a strategic move to render the 360 system incompatible with other systems and terminals.",
-      "collision": "asserts",
-      "type": "asserts"
-    },
-    {
-      "source": "computer lib dream machines",
-      "text": "IBM holds a near-monopoly position in the computer field, selling 65 to 70 percent of all computers and programs, which allows it to define the technology for the general public.",
-      "collision": "asserts",
-      "type": "asserts"
-    },
-    {
-      "source": "computer lib dream machines",
-      "text": "Ted Nelson argues that the 'inverted file' is a misnomer that exposes the computer industry's pathological attachment to linear sequence.",
+      "source": "Speculative Communities  Living with Uncertainty in a Financialized World",
+      "text": "Finance’s speculative forces are key levers in the constitution of modern imagined communities, molding collective myths and eliciting anxieties.",
       "collision": "complicates",
       "type": "complicates"
     },
     {
-      "source": "computer lib dream machines",
-      "text": "Ted Nelson asserts that the computer is used as a General Scapegoat to cover up human decisions that are made for convenience rather than technical necessity.",
+      "source": "Speculative Communities  Living with Uncertainty in a Financialized World",
+      "text": "To speculate increasingly means to connect and to endorse uncertainty preemptively as a means of social survival.",
+      "collision": "asserts",
+      "type": "asserts"
+    },
+    {
+      "source": "Speculative Communities  Living with Uncertainty in a Financialized World",
+      "text": "The *homo speculans* succeeds the *homo economicus* by accepting the future's radical uncertainty rather than attempting to avert it through rational calculation.",
+      "collision": "asserts",
+      "type": "asserts"
+    },
+    {
+      "source": "Speculative Communities  Living with Uncertainty in a Financialized World",
+      "text": "Financialization drives the historical shift from a rationality-driven subject to an imagination-fueled subject, a transition that is neither a rupture nor a serialized shift.",
+      "collision": "complicates",
+      "type": "complicates"
+    },
+    {
+      "source": "Speculative Communities  Living with Uncertainty in a Financialized World",
+      "text": "The history of modern credit practices is inextricably bound to the violent histories of European state formation, colonial conquest, and slave trading.",
+      "collision": "complicates",
+      "type": "complicates"
+    },
+    {
+      "source": "Speculative Communities  Living with Uncertainty in a Financialized World",
+      "text": "Homo economicus is a gendered, masculine figure that excludes the pathologies and vulnerabilities historically associated with women.",
       "collision": "complicates",
       "type": "complicates"
     }
